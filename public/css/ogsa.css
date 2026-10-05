@@ -1,0 +1,609 @@
+/*
+ * Styles propres au site OGSA, chargés après le thème.
+ * Couleur principale : #1baec7 (cf. css/color/color12.css).
+ */
+
+:root {
+    --ogsa-primary: #1baec7;
+    --ogsa-primary-dark: #148a9e;
+    --ogsa-dark: #2c2d3f;
+    --ogsa-accent: #ffbd00;
+    --ogsa-light: #f4f7ff;
+    --ogsa-error: #c0392b;
+}
+
+/* Icônes icofont : le thème utilise les classes « icofont-xxx » sans la classe « icofont » */
+[class^="icofont-"],
+[class*=" icofont-"] {
+    font-family: icofont !important;
+    font-style: normal;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Accessibilité : lien d'évitement visible au clavier uniquement */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 10000;
+    padding: 10px 16px;
+    background: var(--ogsa-dark);
+    color: #fff;
+}
+.skip-link:focus { left: 10px; top: 10px; color: #fff; }
+
+/* Barre supérieure : coordonnées à gauche, langue à droite */
+.header .topbar { padding: 6px 0; position: relative; z-index: 1000; }
+.topbar__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+.header .top-contact { float: none; margin: 0; padding: 0; }
+.header .top-contact li { font-size: 13px; }
+.header .top-contact li i { margin-right: 6px; color: var(--ogsa-primary); }
+.header .top-contact li a { color: var(--ogsa-dark); }
+@media (max-width: 767px) {
+    /* Sur mobile, les boutons flottants remplacent les coordonnées : seule la langue reste. */
+    .header .top-contact { display: none; }
+    .topbar__inner { justify-content: flex-end; }
+}
+
+/* Sélecteur de langue */
+.lang-switch { position: relative; flex-shrink: 0; }
+.lang-switch summary {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    list-style: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ogsa-dark);
+    user-select: none;
+}
+.lang-switch summary::-webkit-details-marker { display: none; }
+.lang-switch summary:hover,
+.lang-switch[open] summary { background: var(--ogsa-light); }
+.lang-switch summary .fa { color: var(--ogsa-primary); transition: transform .2s ease; }
+.lang-switch[open] summary .fa { transform: rotate(180deg); }
+.lang-switch .flag { display: block; border-radius: 2px; box-shadow: 0 0 0 1px rgba(0, 0, 0, .08); }
+.lang-switch__menu {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 6px);
+    min-width: 170px;
+    margin: 0;
+    padding: 6px;
+    list-style: none;
+    background: #fff;
+    border: 1px solid #e6ecf5;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(44, 45, 63, .12);
+}
+.lang-switch__menu a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 9px 12px;
+    border-radius: 7px;
+    font-size: 14px;
+    color: var(--ogsa-dark);
+}
+.lang-switch__menu a:hover { background: var(--ogsa-light); color: var(--ogsa-dark); }
+.lang-switch__menu a.is-active { background: #e8f7fa; color: var(--ogsa-primary-dark); font-weight: 600; }
+
+/* Bouton devis de l'en-tête */
+.header .get-quote { margin-top: 18px; }
+.header .get-quote .btn { background: var(--ogsa-primary); padding: 12px 20px; white-space: nowrap; }
+/* Menu principal toujours sur une ligne à côté du bouton « Demander un devis » (écrans 992-1365 px). */
+.header .nav { flex-wrap: nowrap; }
+.header .nav li a { white-space: nowrap; }
+@media (min-width: 992px) and (max-width: 1365px) {
+    .header .nav li { margin-right: 4px; }
+    .header .nav li a { padding-left: 8px; padding-right: 8px; }
+}
+
+/* Titres de pages (H1 dans le bandeau) */
+.breadcrumbs .page-title {
+    color: #fff;
+    font-size: 36px;
+    font-weight: 600;
+    margin: 0;
+}
+@media (max-width: 767px) {
+    .breadcrumbs .page-title { font-size: 26px; }
+}
+.breadcrumbs ul li { text-transform: none; }
+.breadcrumbs ul li.active { color: var(--ogsa-accent); }
+
+/* Diaporama : les titres des diapositives suivantes reprennent le style du H1 */
+.slider .single-slider .slider-title {
+    color: #2c2d3f;
+    font-size: 38px;
+    font-weight: 200;
+    margin: 0;
+    padding: 0;
+    line-height: 42px;
+}
+.slider .single-slider .slider-title span { color: var(--ogsa-primary); }
+@media (max-width: 991px) {
+    .slider .single-slider .slider-title { font-size: 28px; font-weight: 600; line-height: 35px; }
+}
+@media (max-width: 767px) {
+    .slider .single-slider .slider-title { font-size: 20px; line-height: 25px; }
+}
+
+/* Liste des expertises sur l'accueil */
+.why-choose .choose-left .list li a { color: inherit; }
+.why-choose .choose-left .list li a:hover { color: var(--ogsa-primary); }
+
+/* Carrousel des références */
+.testimonials .single-testimonial img {
+    display: block;
+    width: 100%;
+    height: 120px;
+    object-fit: contain;
+    background: #fff;
+    border-radius: 4px;
+}
+
+/* Images des pages expertises */
+.service-details-area img { width: 100%; height: auto; }
+
+/* Autres expertises (bas des pages expertise) */
+.other-expertises__title {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--ogsa-dark);
+    margin-bottom: 25px;
+}
+.other-expertise {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    height: calc(100% - 20px);
+    margin-bottom: 20px;
+    padding: 18px;
+    border: 1px solid #e6ecf5;
+    border-radius: 6px;
+    background: #fff;
+    color: var(--ogsa-dark);
+    transition: box-shadow .2s ease, border-color .2s ease;
+}
+.other-expertise:hover {
+    border-color: var(--ogsa-primary);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, .08);
+    color: var(--ogsa-dark);
+}
+.other-expertise i { font-size: 26px; color: var(--ogsa-primary); width: 32px; text-align: center; }
+.other-expertise strong { display: block; font-size: 16px; margin-bottom: 4px; }
+.other-expertise small { display: block; color: #888; font-size: 13px; line-height: 1.5; }
+
+/* Partenaires et références */
+.partner-card { text-align: center; }
+.partner-card img {
+    display: block;
+    width: 100%;
+    height: 110px;
+    object-fit: contain;
+    margin-bottom: 18px;
+}
+.partner-card h3 { font-size: 18px; color: var(--ogsa-dark); margin-bottom: 10px; }
+.reference-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 120px;
+    margin-bottom: 24px;
+    padding: 12px;
+    background: #fff;
+    border: 1px solid #e6ecf5;
+    border-radius: 6px;
+}
+.reference-logo img { max-width: 100%; max-height: 100%; object-fit: contain; }
+
+/* Formulaire de contact */
+.contact-us-form label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ogsa-dark);
+}
+.contact-us-form .required { color: var(--ogsa-error); }
+.contact-us-form .form-group { margin-bottom: 18px; }
+.contact-us-form .nice-select { width: 100%; }
+.contact-us-form .is-invalid,
+.contact-us-form .is-invalid + .nice-select { border-color: var(--ogsa-error) !important; }
+.field-error { display: block; margin-top: 5px; font-size: 13px; color: var(--ogsa-error); }
+.contact-us-form .consent-label {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    font-weight: 400;
+    color: #666;
+    line-height: 1.5;
+}
+.contact-us-form .form .consent-label input[type="checkbox"] {
+    flex: 0 0 18px;
+    width: 18px;
+    height: 18px;
+    margin-top: 3px;
+    padding: 0;
+}
+.contact-us-form .consent-label a { color: var(--ogsa-primary); }
+.contact-us-form .alert { font-size: 14px; }
+.contact-us-form .alert i { margin-right: 6px; }
+
+.contact-faq { margin: 10px 0 0; color: #666; font-size: 14px; }
+.contact-faq a { color: var(--ogsa-primary); font-weight: 500; }
+
+/* Cartes de coordonnées (page Contact) : compactes, fond blanc, icône ronde */
+.contact-cards { margin-bottom: 30px; }
+.contact-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    height: calc(100% - 20px);
+    margin-bottom: 20px;
+    padding: 18px;
+    background: #fff;
+    border: 1px solid #e6ecf5;
+    border-radius: 10px;
+    transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+.contact-card:hover {
+    border-color: var(--ogsa-primary);
+    box-shadow: 0 8px 24px rgba(27, 174, 199, .12);
+    transform: translateY(-2px);
+}
+.contact-card__icon {
+    display: inline-flex;
+    flex: 0 0 40px;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #e8f7fa;
+    color: var(--ogsa-primary);
+    font-size: 17px;
+}
+.contact-card__label {
+    margin: 0 0 4px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: #9aa3b5;
+}
+.contact-card__value {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--ogsa-dark);
+    overflow-wrap: normal;
+}
+.contact-card__value a { color: var(--ogsa-dark); font-weight: 500; }
+.contact-card__value a:hover { color: var(--ogsa-primary); }
+.contact-card__muted { color: #888; font-size: 13px; }
+.contact-card__link {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ogsa-primary);
+}
+.contact-card__link i { font-size: 11px; margin-left: 3px; }
+/* Sur grand écran (4 cartes côte à côte), l'icône passe au-dessus du texte :
+   toute la largeur de la carte reste disponible, l'adresse e-mail tient sur une ligne. */
+@media (min-width: 1200px) {
+    .contact-card { flex-direction: column; gap: 12px; }
+}
+
+/* Listes à flèches des pages expertise */
+.expertise-points { list-style: none; padding: 0; margin: 0 0 30px; }
+.expertise-points li { display: flex; gap: 12px; margin-bottom: 14px; line-height: 1.7; }
+.expertise-points li > i { color: var(--ogsa-primary); margin-top: 6px; }
+.expertise-points strong { display: block; color: var(--ogsa-dark); }
+.services-details-img blockquote { background-color: var(--ogsa-primary); }
+.expertise-why ul { list-style: none; padding: 0; margin: 10px 0 0; }
+.expertise-why li { margin-bottom: 8px; }
+
+/* Coordonnées du pied de page */
+.footer .footer-contact { list-style: none; padding: 0; margin: 0; }
+.footer .footer-contact li { display: flex; gap: 12px; margin-bottom: 14px; color: #fff; font-size: 14px; line-height: 1.6; }
+.footer .footer-contact li > i { width: 16px; margin-top: 4px; text-align: center; color: #fff; opacity: .85; }
+.footer .footer-contact a { color: #fff; }
+.footer .footer-contact a:hover { color: var(--ogsa-accent); }
+
+/* Champ piège anti-spam */
+.hp-field {
+    position: absolute !important;
+    left: -10000px !important;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+/* FAQ */
+.faq-item {
+    margin-bottom: 14px;
+    border: 1px solid #e6ecf5;
+    border-radius: 6px;
+    background: #fff;
+}
+.faq-item summary {
+    cursor: pointer;
+    padding: 18px 22px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--ogsa-dark);
+    list-style: none;
+    position: relative;
+    padding-right: 50px;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+    content: "+";
+    position: absolute;
+    right: 22px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 22px;
+    color: var(--ogsa-primary);
+}
+.faq-item[open] summary::after { content: "−"; }
+.faq-item p { padding: 0 22px 18px; margin: 0; line-height: 1.7; }
+.faq-more { margin-top: 30px; text-align: center; }
+.faq-more a { color: var(--ogsa-primary); font-weight: 600; }
+
+/* Pages légales */
+.legal-page h2 { font-size: 22px; color: var(--ogsa-dark); margin: 30px 0 12px; }
+.legal-page h2:first-child { margin-top: 0; }
+.legal-page p, .legal-page li { line-height: 1.8; }
+.legal-page ul { padding-left: 20px; list-style: disc; }
+.legal-page a { color: var(--ogsa-primary); }
+
+/* Pages d'erreur */
+.error-page .error-inner .btn { margin: 6px; }
+
+/* Un bandeau coloré en fin de page ne touche jamais le pied de page : espace comme sous les « Certifications » de l'accueil. */
+main > .call-action:last-child { margin-bottom: 70px; }
+@media (max-width: 767px) {
+    main > .call-action:last-child { margin-bottom: 45px; }
+}
+
+/* Pied de page */
+.footer .single-footer .time-sidual li a,
+.footer .footer-more { color: #fff; }
+.footer .footer-more:hover,
+.footer .single-footer .time-sidual li a:hover { color: var(--ogsa-accent); }
+.footer .newsletter-feedback { margin-top: 12px; font-size: 13px; color: #fff; }
+.footer .newsletter-feedback.error { color: #ffd6d1; }
+.footer .copyright-content p { line-height: 2; }
+.footer-legal { display: inline-block; }
+.footer-legal a { margin-left: 18px; color: #fff; }
+.footer-legal a:hover { color: var(--ogsa-accent); }
+@media (max-width: 767px) {
+    .footer-legal { display: block; }
+    .footer-legal a { margin: 0 8px; }
+}
+
+/* Onglets « Nos domaines d'expertise » : icône à gauche du libellé, sur une ligne comme le site d'origine */
+.departments .department-tab .nav li a { display: inline-flex; align-items: center; gap: 10px; }
+.departments .department-tab .nav li a i { font-size: 22px; color: #9aa3b5; transition: color .2s ease; }
+.departments .department-tab .nav li a.active i,
+.departments .department-tab .nav li a:hover i { color: var(--ogsa-primary); }
+.departments .department-tab .nav li .first { display: inline; padding-top: 0; }
+/* Les cinq onglets tiennent sur une seule ligne : répartis sur toute la largeur sur ordinateur… */
+@media (min-width: 992px) {
+    .departments .department-tab .nav { flex-wrap: nowrap; justify-content: space-between; }
+    .departments .department-tab .nav li { margin: 0; }
+    .departments .department-tab .nav li .first { white-space: nowrap; }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+    .departments .department-tab .nav li .first { font-size: 15px; }
+    .departments .department-tab .nav li a { gap: 7px; }
+    .departments .department-tab .nav li a i { font-size: 17px; }
+}
+/* … et sur une ligne qui défile au doigt sur tablette et mobile. */
+@media (max-width: 991px) {
+    .departments .department-tab .nav {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        margin-bottom: 20px;
+    }
+    .departments .department-tab .nav::-webkit-scrollbar { display: none; }
+    .departments .department-tab .nav li { flex: 0 0 auto; margin: 0 22px 0 0; }
+    .departments .department-tab .nav li .first { font-size: 15px; white-space: nowrap; }
+    .departments .department-tab .nav li a i { font-size: 18px; }
+}
+
+/* ==========================================================================
+   Barre de contact rapide (mobile) : fixée en bas, la page réserve sa hauteur
+   ========================================================================== */
+.quick-contact {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+    display: flex;
+    padding-bottom: env(safe-area-inset-bottom);
+    background: #fff;
+    box-shadow: 0 -4px 16px rgba(44, 45, 63, .12);
+}
+.quick-contact__btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 54px;
+    background: var(--ogsa-primary);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+}
+.quick-contact__btn--light { background: #fff; color: var(--ogsa-primary); }
+.quick-contact__btn:hover,
+.quick-contact__btn:focus { color: #fff; background: var(--ogsa-primary-dark); }
+.quick-contact__btn--light:hover,
+.quick-contact__btn--light:focus { color: var(--ogsa-primary-dark); background: var(--ogsa-light); }
+
+/* ==========================================================================
+   Mobile (< 768 px) : lisibilité, zones tactiles, aucun élément masqué
+   ========================================================================== */
+@media (max-width: 767px) {
+    /* Place réservée à la barre de contact ; le bouton « haut de page » passe au-dessus. */
+    body { padding-bottom: calc(54px + env(safe-area-inset-bottom)); }
+    #scrollUp { bottom: calc(66px + env(safe-area-inset-bottom)) !important; }
+
+    /* Bouton du menu : zone tactile de 44 × 44 px. */
+    .slicknav_btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        margin-top: -38px;
+    }
+    .slicknav_menu .slicknav_icon { margin: 0; width: 26px; height: 18px; float: none; }
+    .slicknav_menu .slicknav_icon-bar { width: 26px; height: 3px; background: var(--ogsa-primary); box-shadow: none; }
+    .slicknav_btn .slicknav_icon-bar + .slicknav_icon-bar { margin-top: 5px; }
+
+    /* Menu déroulé : panneau lisible, une ligne de 48 px par lien. */
+    .slicknav_nav {
+        margin: 12px 0 4px;
+        border-top: 1px solid #e6ecf5;
+        font-size: 16px;
+    }
+    .slicknav_nav > li { border-bottom: 1px solid #e6ecf5; }
+    .slicknav_nav a,
+    .slicknav_nav .slicknav_row {
+        display: flex !important;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 48px;
+        padding: 10px 4px !important;
+        font-weight: 500;
+    }
+    .slicknav_nav .slicknav_parent-link a { padding: 0 !important; min-height: 0; }
+    .slicknav_nav ul { margin: 0 0 8px 12px; }
+    .slicknav_nav ul a { min-height: 42px; font-size: 15px; font-weight: 400; color: #555 !important; }
+    .slicknav_nav .slicknav_arrow { font-size: 12px; color: var(--ogsa-primary); }
+    .slicknav_nav li.active > a { color: var(--ogsa-primary); }
+
+    /* Diaporama d'accueil : texte lisible sur la photo. */
+    .slider .single-slider .text p { font-size: 14px; line-height: 1.6; }
+
+    /* Accueil : liste « Qui sommes-nous » régulière une fois les deux colonnes empilées. */
+    .why-choose .choose-left .list { margin: 0; }
+    .why-choose .choose-left .list li { margin: 0 !important; padding: 7px 0; }
+
+    /* Carrousel des références : les 16 points s'étalaient sur plusieurs lignes ; défilement auto et au doigt conservé. */
+    .testimonials .owl-dots { display: none !important; }
+    .why-choose .choose-right { margin-top: 30px; }
+
+    /* Onglets des domaines d'expertise : une seule ligne qui défile au doigt. */
+    .departments .department-tab .nav {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        margin-bottom: 20px;
+    }
+    .departments .department-tab .nav::-webkit-scrollbar { display: none; }
+    .departments .department-tab .nav li { flex: 0 0 auto; margin: 0 18px 0 0; }
+    .departments .department-tab .nav li a { padding: 10px 2px 12px; }
+    .departments .department-tab .nav li .first { font-size: 15px; white-space: nowrap; }
+    .departments .department-tab .nav li a i { font-size: 18px; }
+    .departments .department-right { margin-top: 25px; }
+
+    /* Cartes « Certifications » : texte assez grand pour être lu. */
+    .newsletter .text-muted.small { font-size: 14px; line-height: 1.6; }
+
+    /* Titre placé sous une photo (pages expertise, référence TOTAL) : espace entre les deux. */
+    .service-details-area .service-details-inner { margin-top: 25px; }
+
+    /* Texte justifié illisible sur petit écran : alignement à gauche. */
+    .text-justify { text-align: left !important; }
+
+    /* Page Contact : libellés des cartes lisibles, case de consentement plus grande. */
+    .contact-card__label { font-size: 12px; }
+    .contact-us-form .form .consent-label input[type="checkbox"] { flex-basis: 22px; width: 22px; height: 22px; }
+
+    /* Pied de page : liens espacés pour le doigt. */
+    .footer .f-link ul li a { display: inline-block; padding: 7px 0; }
+    .footer .footer-more { display: inline-block; padding: 8px 0; }
+    .footer-legal a { display: inline-block; padding: 8px 4px; }
+
+    /* Fil d'Ariane : retour à la ligne propre. */
+    .breadcrumbs .bread-list { line-height: 1.9; }
+}
+
+/* Page Partenaires : monogramme quand le partenaire n'a pas de logo */
+.partner-monogram {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 110px;
+    margin-bottom: 18px;
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    color: var(--ogsa-primary);
+}
+
+/* Page Partenaires : références détaillées (missions réalisées) */
+.case-study {
+    display: flex;
+    gap: 20px;
+    height: calc(100% - 24px);
+    margin-bottom: 24px;
+    padding: 22px;
+    background: #fff;
+    border: 1px solid #e6ecf5;
+    border-radius: 10px;
+    transition: border-color .2s ease, box-shadow .2s ease;
+}
+.case-study:hover { border-color: var(--ogsa-primary); box-shadow: 0 8px 24px rgba(27, 174, 199, .12); }
+.case-study__logo {
+    display: flex;
+    flex: 0 0 140px;
+    align-items: center;
+    justify-content: center;
+    width: 140px;
+    height: 90px;
+    overflow: hidden;
+    border: 1px solid #eef2f8;
+    border-radius: 8px;
+    background: #fff;
+}
+/* Les fichiers logo ont beaucoup de marge blanche : logo entier, légèrement agrandi pour réduire ce blanc. */
+.case-study__logo img { width: 100%; height: 100%; object-fit: contain; transform: scale(1.25); }
+.case-study__logo i { font-size: 34px; color: var(--ogsa-primary); }
+.case-study__sector {
+    display: inline-block;
+    margin-bottom: 6px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    background: #e8f7fa;
+    color: var(--ogsa-primary-dark);
+    font-size: 12px;
+    font-weight: 600;
+}
+.case-study h3 { margin: 0 0 8px; font-size: 18px; font-weight: 600; color: var(--ogsa-dark); line-height: 1.35; }
+.case-study p { margin: 0; font-size: 14px; line-height: 1.7; }
+@media (max-width: 575px) {
+    .case-study { flex-direction: column; gap: 14px; padding: 18px; }
+    .case-study__logo { width: 150px; height: 90px; flex-basis: 90px; }
+}
