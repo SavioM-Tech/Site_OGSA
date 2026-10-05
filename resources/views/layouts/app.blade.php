@@ -64,7 +64,7 @@
     <link rel="stylesheet" href="{{ asset('style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
     <link rel="stylesheet" href="{{ asset('css/color/color12.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/ogsa.css') }}?v=17">
+    <link rel="stylesheet" href="{{ asset('css/ogsa.css') }}?v=19">
 
     @include('partials.schema-organization')
     @stack('jsonld')

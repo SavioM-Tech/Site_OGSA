@@ -147,6 +147,7 @@
     display: block;
     width: 100%;
     height: 120px;
+    padding: 18px 24px;
     object-fit: contain;
     background: #fff;
     border-radius: 4px;
@@ -189,9 +190,11 @@
 .partner-card img {
     display: block;
     width: 100%;
+    max-width: 200px;
     height: 110px;
+    margin: 0 auto 18px;
+    padding: 10px 0;
     object-fit: contain;
-    margin-bottom: 18px;
 }
 .partner-card h3 { font-size: 18px; color: var(--ogsa-dark); margin-bottom: 10px; }
 .reference-logo {
@@ -588,8 +591,8 @@ main > .call-action:last-child { margin-bottom: 70px; }
     border-radius: 8px;
     background: #fff;
 }
-/* Les fichiers logo ont beaucoup de marge blanche : logo entier, légèrement agrandi pour réduire ce blanc. */
-.case-study__logo img { width: 100%; height: 100%; object-fit: contain; transform: scale(1.25); }
+.case-study__logo { padding: 10px; }
+.case-study__logo img { width: 100%; height: 100%; object-fit: contain; }
 .case-study__logo i { font-size: 34px; color: var(--ogsa-primary); }
 .case-study__sector {
     display: inline-block;
