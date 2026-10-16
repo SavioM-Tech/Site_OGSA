@@ -23,6 +23,7 @@ class SitemapController extends Controller
             ['partners', [], '0.7'],
             ['faq', [], '0.6'],
             ['contact', [], '0.8'],
+            ['appointment', [], '0.8'],
             ['legal', [], '0.2'],
             ['privacy', [], '0.2'],
         );

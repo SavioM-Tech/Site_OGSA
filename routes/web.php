@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ExpertiseController;
 use App\Http\Controllers\NewsletterController;
@@ -12,8 +13,8 @@ use Illuminate\Support\Facades\Route;
 | Dans les vues, utiliser lroute('about') qui choisit automatiquement la bonne langue.
 */
 $chemins = [
-    'fr' => ['about' => 'a-propos', 'expertises' => 'expertises', 'partners' => 'partenaires', 'faq' => 'faq', 'contact' => 'contact', 'newsletter' => 'newsletter', 'legal' => 'mentions-legales', 'privacy' => 'politique-de-confidentialite'],
-    'en' => ['about' => 'about', 'expertises' => 'expertise', 'partners' => 'partners', 'faq' => 'faq', 'contact' => 'contact', 'newsletter' => 'newsletter', 'legal' => 'legal-notice', 'privacy' => 'privacy-policy'],
+    'fr' => ['about' => 'a-propos', 'expertises' => 'expertises', 'partners' => 'partenaires', 'faq' => 'faq', 'contact' => 'contact', 'newsletter' => 'newsletter', 'legal' => 'mentions-legales', 'privacy' => 'politique-de-confidentialite', 'appointment' => 'rendez-vous'],
+    'en' => ['about' => 'about', 'expertises' => 'expertise', 'partners' => 'partners', 'faq' => 'faq', 'contact' => 'contact', 'newsletter' => 'newsletter', 'legal' => 'legal-notice', 'privacy' => 'privacy-policy', 'appointment' => 'appointment'],
 ];
 
 foreach (config('ogsa.locales') as $locale => $settings) {
@@ -35,6 +36,11 @@ foreach (config('ogsa.locales') as $locale => $settings) {
             Route::post($c['contact'], [ContactController::class, 'send'])
                 ->middleware('throttle:contact')
                 ->name('contact.send');
+
+            Route::get($c['appointment'], [AppointmentController::class, 'show'])->name('appointment');
+            Route::post($c['appointment'], [AppointmentController::class, 'send'])
+                ->middleware('throttle:contact')
+                ->name('appointment.send');
 
             Route::post($c['newsletter'], [NewsletterController::class, 'subscribe'])
                 ->middleware('throttle:contact')

@@ -22,3 +22,7 @@
 Homestead.json
 Homestead.yaml
 Thumbs.db
+
+# Exports de connexion FTP (FileZilla) : jamais sur GitHub
+ftp*.xml
+/deploy

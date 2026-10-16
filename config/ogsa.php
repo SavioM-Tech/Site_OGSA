@@ -114,4 +114,14 @@ return [
         'regions' => ['afrique', 'europe', 'amerique', 'asie', 'moyen-orient', 'oceanie'],
     ],
 
+
+    /*
+    | Prise de rendez-vous : modes d'échange et créneaux proposés (pendant les horaires d'ouverture).
+    | Les libellés sont dans lang/{fr,en}/appointment.php.
+    */
+    'appointment' => [
+        'modes' => ['visio', 'telephone', 'bureau', 'site'],
+        'slots' => ['08:00', '09:00', '10:00', '11:00', '12:00', '14:30', '15:30', '16:30'],
+    ],
+
 ];

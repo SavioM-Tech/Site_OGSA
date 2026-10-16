@@ -46,7 +46,7 @@
                                         <a href="{{ lroute('about') }}">{{ __('site.nav.about') }}</a>
                                     </li>
                                     <li class="{{ request()->routeIs('expertises.*', 'en.expertises.*', 'partners', 'en.partners') ? 'active' : '' }}">
-                                        <a href="#">{{ __('site.nav.expertise') }} <i class="icofont-rounded-down"></i></a>
+                                        <a href="#">{{ __('site.nav.expertise') }}</a>
                                         <ul class="dropdown">
                                             @foreach (array_keys(config('ogsa.expertises')) as $key)
                                                 <li><a href="{{ lroute('expertises.show', $key) }}">{{ __("expertises.$key.title") }}</a></li>
@@ -54,20 +54,30 @@
                                             <li><a href="{{ lroute('partners') }}">{{ __('site.nav.partners') }}</a></li>
                                         </ul>
                                     </li>
-                                    <li class="{{ request()->routeIs('faq', 'en.faq') ? 'active' : '' }}">
-                                        <a href="{{ lroute('faq') }}">{{ __('site.nav.faq') }}</a>
-                                    </li>
                                     <li class="{{ request()->routeIs('contact', 'en.contact') ? 'active' : '' }}">
                                         <a href="{{ lroute('contact') }}">{{ __('site.nav.contact') }}</a>
+                                    </li>
+                                    {{-- Visibles seulement dans le menu mobile (sur ordinateur, ce sont les boutons à droite). --}}
+                                    <li class="nav-cta">
+                                        <a href="{{ lroute('appointment') }}"><i class="fa fa-calendar-check-o" aria-hidden="true"></i> {{ __('appointment.button') }}</a>
+                                    </li>
+                                    <li class="nav-cta">
+                                        <a href="{{ lroute('contact', ['objet' => 'devis']) }}"><i class="fa fa-file-text-o" aria-hidden="true"></i> {{ __('site.nav.quote') }}</a>
                                     </li>
                                 </ul>
                             </nav>
                         </div>
                     </div>
+                    {{-- Boutons d'action, même forme ; libellé court sur les écrans moyens (992-1199 px). --}}
                     <div class="col-lg-3 col-12 d-none d-lg-block">
-                        <div class="get-quote">
+                        <div class="get-quote header-actions">
+                            <a class="btn" href="{{ lroute('appointment') }}">
+                                <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+                                <span class="label-full">{{ __('appointment.button') }}</span><span class="label-short">{{ __('appointment.button_short') }}</span>
+                            </a>
                             <a class="btn" href="{{ lroute('contact', ['objet' => 'devis']) }}">
-                                <i class="fa fa-file-text-o" aria-hidden="true"></i> {{ __('site.nav.quote') }}
+                                <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                                <span class="label-full">{{ __('site.nav.quote') }}</span><span class="label-short">{{ __('site.nav.quote_short') }}</span>
                             </a>
                         </div>
                     </div>

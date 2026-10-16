@@ -19,66 +19,53 @@
 <section class="contact-us section">
     <div class="container">
 
-        {{-- Coordonnées : quatre cartes compactes --}}
-        <div class="row contact-cards">
-            <div class="col-xl-3 col-md-6 col-12">
-                <div class="contact-card">
-                    <span class="contact-card__icon"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
-                    <div>
-                        <p class="contact-card__label">{{ __('site.address.head_office') }}</p>
-                        <p class="contact-card__value">
-                            {{ $address['street'] }}<br>
-                            {{ $address['city'] }}, {{ __('site.address.country') }}<br>
-                            <span class="contact-card__muted">{{ __('site.address.po_box') }}{{ __('site.sep') }}{{ $address['po_box'] }}</span>
-                        </p>
-                        <a class="contact-card__link" href="{{ $address['maps_url'] }}" target="_blank" rel="noopener">
-                            {{ __('site.address.map') }} <i class="fa fa-external-link" aria-hidden="true"></i>
-                        </a>
-                    </div>
+        {{-- Coordonnées : cartes larges et basses (icône ronde, libellé, une à deux lignes), bordure en dégradé. --}}
+        <div class="info-cards">
+            <div class="info-card">
+                <span class="info-card__icon"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                <div class="info-card__body">
+                    <p class="info-card__label">{{ __('site.address.head_office') }}</p>
+                    <p class="info-card__value">
+                        <a href="{{ $address['maps_url'] }}" target="_blank" rel="noopener" title="{{ __('site.address.map') }}">{{ $address['street'] }}, {{ $address['city'] }}</a>
+                    </p>
+                    <p class="info-card__muted">{{ $address['po_box'] }} – {{ __('site.address.country') }}</p>
                 </div>
             </div>
-            <div class="col-xl-3 col-md-6 col-12">
-                <div class="contact-card">
-                    <span class="contact-card__icon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
-                    <div>
-                        <p class="contact-card__label">{{ __('site.contact.email') }}</p>
-                        <p class="contact-card__value">
-                            <a class="text-nowrap" href="mailto:{{ config('ogsa.contact_email') }}">{{ config('ogsa.contact_email') }}</a>
-                        </p>
-                    </div>
+            <div class="info-card">
+                <span class="info-card__icon"><i class="fa fa-phone" aria-hidden="true"></i></span>
+                <div class="info-card__body">
+                    <p class="info-card__label">{{ __('site.contact.phone') }}</p>
+                    <p class="info-card__value">
+                        @foreach (config('ogsa.phones') as $phone)
+                            {{-- Le « / » accompagne le numéro suivant : en cas de retour à la ligne, il passe avec lui. --}}
+                            <span class="text-nowrap">@unless ($loop->first)/ @endunless<a href="tel:{{ $phone['tel'] }}">{{ $loop->first ? $phone['label'] : $phone['local'] }}</a></span>
+                        @endforeach
+                    </p>
                 </div>
             </div>
-            <div class="col-xl-3 col-md-6 col-12">
-                <div class="contact-card">
-                    <span class="contact-card__icon"><i class="fa fa-phone" aria-hidden="true"></i></span>
-                    <div>
-                        <p class="contact-card__label">{{ __('site.contact.phone') }}</p>
-                        <p class="contact-card__value">
-                            @foreach (config('ogsa.phones') as $phone)
-                                <a href="tel:{{ $phone['tel'] }}">{{ $loop->first ? $phone['label'] : $phone['local'] }}</a>@if (! $loop->last)<br>@endif
-                            @endforeach
-                        </p>
-                    </div>
+            <div class="info-card">
+                <span class="info-card__icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
+                <div class="info-card__body">
+                    <p class="info-card__label">{{ __('site.contact.email') }}</p>
+                    <p class="info-card__value">
+                        <a class="text-nowrap" href="mailto:{{ config('ogsa.contact_email') }}">{{ config('ogsa.contact_email') }}</a>
+                    </p>
                 </div>
             </div>
-            <div class="col-xl-3 col-md-6 col-12">
-                <div class="contact-card">
-                    <span class="contact-card__icon"><i class="fa fa-clock-o" aria-hidden="true"></i></span>
-                    <div>
-                        <p class="contact-card__label">{{ __('site.contact.hours') }}</p>
-                        <p class="contact-card__value">
-                            @foreach (__('site.hours') as $hours)
-                                <span class="d-block">{{ $hours['days'] }}</span>
-                                <span class="contact-card__muted d-block @if (! $loop->last) mb-1 @endif">{{ $hours['time'] }}</span>
-                            @endforeach
-                        </p>
-                    </div>
+            <div class="info-card">
+                <span class="info-card__icon"><i class="fa fa-clock-o" aria-hidden="true"></i></span>
+                <div class="info-card__body">
+                    <p class="info-card__label">{{ __('site.contact.hours') }}</p>
+                    <p class="info-card__value">{{ __('site.hours.0.days') }}{{ __('site.sep') }}{{ __('site.hours.0.time') }}</p>
+                    <p class="info-card__muted">{{ __('site.contact.closed') }}</p>
                 </div>
             </div>
         </div>
 
         <div class="row justify-content-center">
-            <div class="col-lg-10 col-12">
+            <div class="col-12">
+                {{-- Formulaire dans une carte (ombre et coins arrondis du thème d'origine). --}}
+                <div class="inner contact-form-card">
                 <div class="contact-us-form" id="formulaire">
                     <h2>{{ __('site.contact.form_title') }}</h2>
                     <p>{!! __('site.contact.form_intro', ['star' => $star]) !!}</p>
@@ -119,7 +106,7 @@
                                 </div>
                             </div>
 
-                            @foreach (['profil' => ['profils', true, 'col-lg-6 col-12'], 'objet' => ['objets', true, 'col-lg-6 col-12'], 'domaine' => ['domaines', false, 'col-lg-6 col-12'], 'region' => ['regions', false, 'col-lg-3 col-6']] as $champ => [$liste, $obligatoire, $colonnes])
+                            @foreach (['profil' => ['profils', true, 'col-lg-6 col-12'], 'objet' => ['objets', true, 'col-lg-6 col-12'], 'domaine' => ['domaines', false, 'col-lg-6 col-12'], 'region' => ['regions', false, 'col-lg-3 col-sm-6 col-12']] as $champ => [$liste, $obligatoire, $colonnes])
                                 <div class="{{ $colonnes }}">
                                     <div class="form-group">
                                         <label for="{{ $champ }}">{{ __("site.form.fields.$champ") }} @if ($obligatoire) {!! $star !!} @endif</label>
@@ -134,7 +121,7 @@
                                 </div>
                             @endforeach
 
-                            <div class="col-lg-3 col-6">
+                            <div class="col-lg-3 col-sm-6 col-12">
                                 <div class="form-group">
                                     <label for="pays">{{ __('site.form.fields.pays') }}</label>
                                     <input id="pays" name="pays" type="text" value="{{ old('pays') }}" maxlength="80" autocomplete="country-name" class="@error('pays') is-invalid @enderror">
@@ -196,6 +183,7 @@
                     <p class="contact-faq">
                         {!! __('site.contact.faq', ['link' => '<a href="'.e(lroute('faq')).'">'.e(__('site.contact.faq_link')).'</a>']) !!}
                     </p>
+                </div>
                 </div>
             </div>
         </div>

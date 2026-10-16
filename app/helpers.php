@@ -59,7 +59,7 @@ if (! function_exists('alternate_url')) {
         $route = request()->route();
         $name = $route?->getName();
 
-        if (! $name || in_array(str_replace('en.', '', $name), ['contact.send', 'newsletter.subscribe'], true)) {
+        if (! $name || in_array(str_replace('en.', '', $name), ['contact.send', 'newsletter.subscribe', 'appointment.send'], true)) {
             return lroute('home', [], $locale);
         }
 
