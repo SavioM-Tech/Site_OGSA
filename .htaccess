@@ -1,9 +1,27 @@
 # Utilisé uniquement si le domaine pointe sur la racine du projet (hébergement mutualisé
-# où l'on ne peut pas choisir le dossier public/). Toutes les requêtes sont servies par
-# public/ : le code, le fichier .env et les dépendances ne sont jamais accessibles en ligne.
+# où l'on ne peut pas choisir le dossier public/, comme chez LWS). Toutes les requêtes sont
+# servies par public/ : le code, le fichier .env et les dépendances ne sont jamais accessibles en ligne.
 
 <IfModule mod_rewrite.c>
     RewriteEngine On
+
+    # Les redirections se font ICI, sur l'adresse d'origine : après la réécriture vers public/,
+    # l'adresse contiendrait « /public/ ».
+
+    # Adresse unique du site : https://www.ogs-africa.com (sans effet en local).
+    RewriteCond %{HTTP_HOST} ^ogs-africa\.com$ [NC]
+    RewriteRule ^ https://www.ogs-africa.com%{REQUEST_URI} [L,R=301]
+
+    RewriteCond %{HTTP_HOST} ^www\.ogs-africa\.com$ [NC]
+    RewriteCond %{HTTPS} off
+    RewriteCond %{HTTP:X-Forwarded-Proto} !https
+    RewriteRule ^ https://www.ogs-africa.com%{REQUEST_URI} [L,R=301]
+
+    # Barre oblique finale retirée (/contact/ -> /contact).
+    RewriteCond %{REQUEST_URI} ^(.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+    # Tout le reste est servi par public/.
     RewriteRule ^(.*)$ public/$1 [L]
 </IfModule>
 

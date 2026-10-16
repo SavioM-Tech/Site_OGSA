@@ -66,6 +66,11 @@ if (! function_exists('alternate_url')) {
         $name = preg_replace('/^en\./', '', $name);
         $parameters = $route->parameters();
 
+        // Route sans version dans l'autre langue (sitemap.xml, robots.txt…) : renvoi vers l'accueil.
+        if (! \Illuminate\Support\Facades\Route::has(($locale === 'fr' ? '' : $locale.'.').$name)) {
+            return lroute('home', [], $locale);
+        }
+
         if ($name === 'expertises.show') {
             $key = expertise_key($parameters['slug'], app()->getLocale());
 

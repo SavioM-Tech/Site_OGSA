@@ -96,4 +96,12 @@ class PagesTest extends TestCase
     {
         $this->get('/robots.txt')->assertOk()->assertSee('Sitemap: '.route('sitemap'), false);
     }
+
+    public function test_une_erreur_sur_une_route_sans_traduction_affiche_la_page_d_erreur_du_site(): void
+    {
+        // Le sélecteur de langue de la page d'erreur ne doit pas planter sur une route non traduite (sitemap.xml).
+        \Illuminate\Support\Facades\Route::get('/test-erreur.xml', fn () => abort(500))->name('test-erreur');
+
+        $this->get('/test-erreur.xml')->assertStatus(500)->assertSee('Erreur du serveur');
+    }
 }
