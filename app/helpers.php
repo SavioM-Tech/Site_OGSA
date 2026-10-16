@@ -64,7 +64,9 @@ if (! function_exists('alternate_url')) {
         }
 
         $name = preg_replace('/^en\./', '', $name);
-        $parameters = $route->parameters();
+        // Seuls les paramètres présents dans l'adresse (ex. {slug}) : les pages déclarées avec Route::view
+        // ont aussi des paramètres internes (view, status…) qui ne doivent pas apparaître dans l'URL.
+        $parameters = array_intersect_key($route->parameters(), array_flip($route->parameterNames()));
 
         // Route sans version dans l'autre langue (sitemap.xml, robots.txt…) : renvoi vers l'accueil.
         if (! \Illuminate\Support\Facades\Route::has(($locale === 'fr' ? '' : $locale.'.').$name)) {

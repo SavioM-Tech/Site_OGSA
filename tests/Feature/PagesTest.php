@@ -51,6 +51,11 @@ class PagesTest extends TestCase
 
     public function test_le_selecteur_de_langue_pointe_vers_la_page_equivalente(): void
     {
+        // Pas de paramètres internes (view, status) dans les liens de langue.
+        $this->get('/a-propos')
+            ->assertSee('hreflang="en" href="'.url('/en/about').'"', false)
+            ->assertDontSee('view=pages', false);
+
         $this->get('/expertises/services-sur-puits')
             ->assertSee('href="'.url('/en/expertise/well-services').'"', false);
 
