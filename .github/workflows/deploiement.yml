@@ -8,7 +8,8 @@
 # jamais dans le code : FTP_SERVER, FTP_USERNAME, FTP_PASSWORD.
 # Variables facultatives (même écran, onglet « Variables ») :
 #   FTP_PROTOCOL   ftps (défaut, connexion chiffrée) ou ftp si LWS refuse le chiffrement
-#   FTP_SERVER_DIR dossier du site sur le serveur, vu depuis la racine du compte FTP (défaut : htdocs/)
+#   FTP_SERVER_DIR dossier du site, vu depuis l'ouverture du compte FTP. Défaut : ./ (chez LWS,
+#                  le compte FTP s'ouvre directement dans htdocs/)
 #
 # Ce qui n'est jamais envoyé ni écrasé sur le serveur : .env (configuration et mots de passe),
 # storage/ (journaux, sessions, cache), les tests et les fichiers de développement.
@@ -64,7 +65,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ${{ vars.FTP_PROTOCOL || 'ftps' }}
           port: 21
-          server-dir: ${{ vars.FTP_SERVER_DIR || 'htdocs/' }}
+          server-dir: ${{ vars.FTP_SERVER_DIR || './' }}
           # Seuls les fichiers modifiés depuis le dernier envoi partent (état mémorisé sur le serveur
           # dans .ftp-deploy-sync-state.json, inaccessible depuis le web grâce au .htaccess racine).
           exclude: |
@@ -82,3 +83,4 @@ jobs:
             .editorconfig
             *.md
             ftp*.xml
+            .phpunit.result.cache

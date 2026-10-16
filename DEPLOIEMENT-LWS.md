@@ -132,9 +132,9 @@ Dans GitHub : **Settings > Secrets and variables > Actions > New repository secr
 | `FTP_PASSWORD` | mot de passe FTP LWS |
 
 Facultatif, onglet **Variables** : `FTP_PROTOCOL` = `ftp` si LWS refuse la connexion chiffrée (`ftps` par défaut),
-`FTP_SERVER_DIR` si le dossier du site n'est pas `htdocs/` depuis la racine du compte FTP.
+`FTP_SERVER_DIR` si le compte FTP ne s'ouvre pas directement dans le dossier du site (par défaut `./` : chez LWS, il s'ouvre dans `htdocs/`).
 
-Le premier envoi transfère tous les fichiers (environ 7 000, plusieurs minutes) ; les suivants seulement les fichiers modifiés.
+Le premier envoi transfère tous les fichiers (environ 7 000, environ 1 h 30 chez LWS) ; les suivants seulement les fichiers modifiés.
 
 ### Méthode manuelle (secours)
 
