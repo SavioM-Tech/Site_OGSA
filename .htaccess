@@ -1,0 +1,15 @@
+# Utilisé uniquement si le domaine pointe sur la racine du projet (hébergement mutualisé
+# où l'on ne peut pas choisir le dossier public/). Toutes les requêtes sont servies par
+# public/ : le code, le fichier .env et les dépendances ne sont jamais accessibles en ligne.
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
+
+# Sécurité supplémentaire si mod_rewrite était désactivé : fichiers sensibles inaccessibles.
+<FilesMatch "^(\.env.*|\.git.*|composer\.(json|lock)|artisan|phpunit\.xml|.*\.md)$">
+    Require all denied
+</FilesMatch>
+
+Options -Indexes
