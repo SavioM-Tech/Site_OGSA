@@ -1,0 +1,84 @@
+# Mise en production automatique du site OGSA chez LWS (FTP).
+#
+# Déclenchement : envoi (push) sur la branche « production », ou lancement manuel
+# depuis l'onglet « Actions » de GitHub. La branche « main » sert au développement ;
+# une correction validée est fusionnée dans « production » pour partir en ligne.
+#
+# Accès FTP : stockés dans les secrets du dépôt (Settings > Secrets and variables > Actions),
+# jamais dans le code : FTP_SERVER, FTP_USERNAME, FTP_PASSWORD.
+# Variables facultatives (même écran, onglet « Variables ») :
+#   FTP_PROTOCOL   ftps (défaut, connexion chiffrée) ou ftp si LWS refuse le chiffrement
+#   FTP_SERVER_DIR dossier du site sur le serveur, vu depuis la racine du compte FTP (défaut : htdocs/)
+#
+# Ce qui n'est jamais envoyé ni écrasé sur le serveur : .env (configuration et mots de passe),
+# storage/ (journaux, sessions, cache), les tests et les fichiers de développement.
+
+name: Mise en production
+
+on:
+  push:
+    branches: [production]
+  workflow_dispatch:
+
+# Une seule mise en production à la fois.
+concurrency:
+  group: production
+  cancel-in-progress: false
+
+jobs:
+  deploiement:
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+      - name: Récupération du code
+        uses: actions/checkout@v4
+
+      - name: PHP 8.3 (même version que le serveur LWS)
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          tools: composer:v2
+          coverage: none
+
+      - name: Dépendances de test
+        run: composer install --no-interaction --no-progress --prefer-dist
+
+      - name: Tests (la mise en production s'arrête si un test échoue)
+        run: |
+          cp .env.example .env
+          php artisan key:generate --no-interaction
+          php artisan test
+          rm .env
+
+      - name: Dépendances de production uniquement
+        run: |
+          rm -rf vendor
+          composer install --no-dev --optimize-autoloader --no-interaction --no-progress --prefer-dist
+
+      - name: Envoi sur le serveur LWS
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ${{ vars.FTP_PROTOCOL || 'ftps' }}
+          port: 21
+          server-dir: ${{ vars.FTP_SERVER_DIR || 'htdocs/' }}
+          # Seuls les fichiers modifiés depuis le dernier envoi partent (état mémorisé sur le serveur
+          # dans .ftp-deploy-sync-state.json, inaccessible depuis le web grâce au .htaccess racine).
+          exclude: |
+            **/.git*
+            **/.git*/**
+            .github/**
+            .env
+            .env.*
+            storage/**
+            tests/**
+            outils/**
+            deploy/**
+            node_modules/**
+            phpunit.xml
+            .editorconfig
+            *.md
+            ftp*.xml

@@ -107,8 +107,36 @@ Une fois les vérifications de la section 6 faites en HTTPS :
 
 Pour diagnostiquer, on peut passer **temporairement** `APP_DEBUG=true` dans `.env` : ne jamais le laisser activé, car les erreurs détaillées exposent la configuration.
 
-## Mettre à jour le site plus tard
+## Mettre à jour le site plus tard (automatique, via GitHub)
 
-1. Faire les modifications en local, les tester (`php artisan test`), les commiter.
-2. Reconstruire le paquet : `bash outils/construire-paquet.sh`.
-3. Sur le serveur, remplacer les fichiers **sauf** `.env` et le contenu de `storage/` (journaux, sessions).
+Les corrections partent en production automatiquement par GitHub Actions
+(fichier `.github/workflows/deploiement.yml`) :
+
+1. Les modifications sont faites et testées sur la branche `main`.
+2. Une fois validées, `main` est fusionnée dans la branche **`production`** et envoyée sur GitHub :
+   ```
+   git checkout production && git merge main && git push origin production && git checkout main
+   ```
+3. GitHub relance les tests, installe les dépendances de production puis envoie **uniquement les fichiers modifiés**
+   par FTP dans `htdocs/`. Le fichier `.env` et le dossier `storage/` du serveur ne sont jamais touchés.
+4. Suivi : onglet **Actions** du dépôt GitHub (une coche verte = mise en ligne réussie).
+
+### Mise en place (une seule fois)
+
+Dans GitHub : **Settings > Secrets and variables > Actions > New repository secret**, créer :
+
+| Secret | Valeur |
+|---|---|
+| `FTP_SERVER` | `ftp.ogs-africa.com` |
+| `FTP_USERNAME` | identifiant FTP LWS |
+| `FTP_PASSWORD` | mot de passe FTP LWS |
+
+Facultatif, onglet **Variables** : `FTP_PROTOCOL` = `ftp` si LWS refuse la connexion chiffrée (`ftps` par défaut),
+`FTP_SERVER_DIR` si le dossier du site n'est pas `htdocs/` depuis la racine du compte FTP.
+
+Le premier envoi transfère tous les fichiers (environ 7 000, plusieurs minutes) ; les suivants seulement les fichiers modifiés.
+
+### Méthode manuelle (secours)
+
+Reconstruire un paquet avec `bash outils/construire-paquet.sh`, puis sur le serveur remplacer les fichiers
+**sauf** `.env` et le contenu de `storage/`.

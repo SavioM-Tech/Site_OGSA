@@ -22,6 +22,10 @@ return [
         'en' => ['prefix' => 'en', 'label' => 'English', 'short' => 'EN', 'og' => 'en_GB', 'hreflang' => 'en'],
     ],
 
+    // Code de validation Google Search Console (balise <meta name="google-site-verification">).
+    // Ce n'est pas un secret : il est visible dans le code des pages.
+    'google_site_verification' => env('GOOGLE_SITE_VERIFICATION', ''),
+
     // Adresse qui reçoit les messages du formulaire de contact et de la newsletter.
     'contact_email' => env('CONTACT_EMAIL', 'direction@ogs-africa.com'),
 

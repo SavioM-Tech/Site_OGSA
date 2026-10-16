@@ -20,6 +20,9 @@
     <link rel="canonical" href="{{ url()->current() }}">
     <meta name="author" content="{{ config('ogsa.name') }}">
     <meta name="theme-color" content="#1baec7">
+    @if (config('ogsa.google_site_verification'))
+        <meta name="google-site-verification" content="{{ config('ogsa.google_site_verification') }}">
+    @endif
 
     {{-- Versions linguistiques de la page (référencement international) --}}
     @foreach ($locales as $code => $settings)
@@ -64,7 +67,7 @@
     <link rel="stylesheet" href="{{ asset('style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
     <link rel="stylesheet" href="{{ asset('css/color/color12.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/ogsa.css') }}?v=34">
+    <link rel="stylesheet" href="{{ asset('css/ogsa.css') }}?v=35">
 
     @include('partials.schema-organization')
     @stack('jsonld')
