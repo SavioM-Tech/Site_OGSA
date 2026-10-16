@@ -46,7 +46,7 @@ return [
     'submit_note' => 'Vos informations servent uniquement à préparer l’échange.',
 
     'success_title' => 'Merci, votre demande de rendez-vous a bien été envoyée.',
-    'success_text' => 'Nous revenons vers vous pour confirmer l’un des créneaux proposés.',
+    'success_text' => 'Nous revenons vers vous pour confirmer l’un des créneaux proposés. Un e-mail de confirmation vous a été envoyé.',
     'error_title' => 'La demande n’a pas été envoyée.',
     'error_text' => 'Merci de corriger les champs indiqués ci-dessous.',
     'send_error' => 'Votre demande n’a pas pu être envoyée suite à un problème technique. Merci de réessayer ou de nous appeler au :phone.',
@@ -71,6 +71,14 @@ return [
     ],
 
     // E-mail envoyé à la direction (toujours en français).
+    // E-mail de confirmation envoyé au visiteur.
+    'confirmation' => [
+        'subject' => 'Votre demande de rendez-vous – OGSA',
+        'intro' => 'Nous avons bien reçu votre demande de rendez-vous. Nous vous confirmerons l’un des créneaux proposés par e-mail ou par téléphone.',
+        'date_format' => 'l j F Y',
+        'at' => 'à',
+    ],
+
     'mail' => [
         'subject' => '[Site OGSA] Demande de rendez-vous – :nom',
         'title' => 'Nouvelle demande de rendez-vous',

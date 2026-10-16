@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\AppointmentRequest;
+use App\Mail\AppointmentConfirmation;
 use App\Mail\AppointmentMessage;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Log;
@@ -39,6 +40,14 @@ class AppointmentController extends Controller
                 'appointment_error',
                 __('appointment.send_error', ['phone' => config('ogsa.phones.0.label')])
             );
+        }
+
+        try {
+            // Accusé de réception au visiteur, dans sa langue. La demande est déjà transmise :
+            // un échec ici est seulement journalisé.
+            Mail::to($donnees['email'])->locale($donnees['langue'])->send(new AppointmentConfirmation($donnees));
+        } catch (Throwable $e) {
+            Log::warning('Échec de l’accusé de réception d’une demande de rendez-vous', ['erreur' => $e->getMessage()]);
         }
 
         return redirect()->to($retour)->with('appointment_success', true);

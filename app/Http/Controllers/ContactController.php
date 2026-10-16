@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ContactRequest;
+use App\Mail\ContactConfirmation;
 use App\Mail\ContactMessage;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -45,6 +46,14 @@ class ContactController extends Controller
                 'contact_error',
                 __('site.contact.send_error', ['email' => config('ogsa.contact_email')])
             );
+        }
+
+        try {
+            // Accusé de réception au visiteur, dans sa langue. La demande est déjà transmise :
+            // un échec ici est seulement journalisé.
+            Mail::to($donnees['email'])->locale($donnees['langue'])->send(new ContactConfirmation($donnees));
+        } catch (Throwable $e) {
+            Log::warning('Échec de l’accusé de réception du formulaire de contact', ['erreur' => $e->getMessage()]);
         }
 
         return redirect()->to($retour)->with('contact_success', true);

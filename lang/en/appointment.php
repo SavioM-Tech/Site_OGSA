@@ -46,7 +46,7 @@ return [
     'submit_note' => 'Your information is only used to prepare the meeting.',
 
     'success_title' => 'Thank you, your appointment request has been sent.',
-    'success_text' => 'We will get back to you to confirm one of the suggested slots.',
+    'success_text' => 'We will get back to you to confirm one of the suggested slots. A confirmation email has been sent to you.',
     'error_title' => 'Your request was not sent.',
     'error_text' => 'Please correct the fields indicated below.',
     'send_error' => 'Your request could not be sent due to a technical problem. Please try again or call us on :phone.',
@@ -68,5 +68,13 @@ return [
         'We confirm one of the two slots.',
         'We discuss your project with the relevant expert.',
         'If needed, we send you a tailored proposal.',
+    ],
+
+    // Confirmation email sent to the visitor.
+    'confirmation' => [
+        'subject' => 'Your appointment request – OGSA',
+        'intro' => 'We have received your appointment request. We will confirm one of the suggested slots by email or phone.',
+        'date_format' => 'l, F j, Y',
+        'at' => 'at',
     ],
 ];

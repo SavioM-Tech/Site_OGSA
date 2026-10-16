@@ -89,7 +89,7 @@ return [
         'form_title' => 'Écrivez-nous',
         'form_intro' => 'Décrivez votre besoin : votre message est transmis directement à la direction d’OGSA. Les champs marqués d’un :star sont obligatoires.',
         'success_title' => 'Merci, votre message a bien été envoyé.',
-        'success_text' => 'Nous l’étudions et revenons vers vous dans les meilleurs délais.',
+        'success_text' => 'Nous l’étudions et revenons vers vous dans les meilleurs délais. Un e-mail de confirmation vous a été envoyé.',
         'error_title' => 'Le message n’a pas été envoyé.',
         'error_text' => 'Merci de corriger les champs indiqués ci-dessous.',
         'send_error' => 'Votre message n’a pas pu être envoyé suite à un problème technique. Merci de réessayer ou de nous écrire directement à :email.',
@@ -163,6 +163,18 @@ return [
     ],
 
     // E-mails envoyés à la direction (toujours rédigés en français).
+    // E-mails de confirmation envoyés au visiteur (formulaire de contact et prise de rendez-vous).
+    'confirmation' => [
+        'greeting' => 'Bonjour :nom,',
+        'recap_title' => 'Récapitulatif de votre demande',
+        'contact_subject' => 'Nous avons bien reçu votre message – OGSA',
+        'contact_intro' => 'Nous avons bien reçu votre message et vous en remercions. Notre équipe l’étudie et revient vers vous dans les meilleurs délais.',
+        'questions' => 'Pour toute question, répondez simplement à cet e-mail ou appelez-nous au :phone.',
+        'hours' => 'Nos horaires',
+        'signature' => 'L’équipe Oil & Gas Services Africa (OGSA)',
+        'auto' => 'Cet e-mail vous est envoyé automatiquement suite à votre demande sur www.ogs-africa.com. Si vous n’êtes pas à l’origine de cette demande, vous pouvez l’ignorer.',
+    ],
+
     'mail' => [
         'contact_title' => 'Nouveau message depuis le site OGSA',
         'contact_intro' => 'Nouveau message reçu depuis le formulaire de contact du site OGSA.',

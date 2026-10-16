@@ -89,7 +89,7 @@ return [
         'form_title' => 'Write to us',
         'form_intro' => 'Tell us about your needs: your message goes straight to OGSA’s management. Fields marked with :star are required.',
         'success_title' => 'Thank you, your message has been sent.',
-        'success_text' => 'We will review it and get back to you as soon as possible.',
+        'success_text' => 'We will review it and get back to you as soon as possible. A confirmation email has been sent to you.',
         'error_title' => 'Your message was not sent.',
         'error_text' => 'Please correct the fields indicated below.',
         'send_error' => 'Your message could not be sent due to a technical problem. Please try again or write to us directly at :email.',
@@ -160,6 +160,18 @@ return [
             'moyen-orient' => 'Middle East',
             'oceanie' => 'Oceania',
         ],
+    ],
+
+    // Confirmation emails sent to the visitor (contact form and appointment request).
+    'confirmation' => [
+        'greeting' => 'Hello :nom,',
+        'recap_title' => 'Summary of your request',
+        'contact_subject' => 'We have received your message – OGSA',
+        'contact_intro' => 'Thank you, we have received your message. Our team is reviewing it and will get back to you as soon as possible.',
+        'questions' => 'If you have any questions, simply reply to this email or call us on :phone.',
+        'hours' => 'Opening hours',
+        'signature' => 'The Oil & Gas Services Africa (OGSA) team',
+        'auto' => 'This email was sent automatically following your request on www.ogs-africa.com. If you did not make this request, you can ignore it.',
     ],
 
     'errors' => [

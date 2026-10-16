@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Mail\ContactConfirmation;
 use App\Mail\ContactMessage;
 use App\Mail\NewsletterSubscription;
 use Illuminate\Support\Facades\Mail;
@@ -122,5 +123,36 @@ class ContactFormTest extends TestCase
         Mail::assertSent(NewsletterSubscription::class, fn ($mail) => $mail->hasTo('direction@ogs-africa.com')
             && $mail->email === 'lecteur@example.com'
             && $mail->langue === 'en');
+    }
+
+    public function test_le_visiteur_recoit_un_accuse_de_reception_dans_sa_langue(): void
+    {
+        Mail::fake();
+
+        $this->post('/en/contact', $this->donneesValides())->assertSessionHas('contact_success');
+
+        Mail::assertSent(ContactConfirmation::class, fn (ContactConfirmation $mail) => $mail->hasTo('jean.dupont@example.com')
+            && $mail->hasReplyTo('direction@ogs-africa.com')
+            && $mail->locale === 'en');
+    }
+
+    public function test_l_accuse_de_reception_ne_recopie_pas_le_message(): void
+    {
+        $mail = (new ContactConfirmation($this->donneesValides(['langue' => 'fr'])))->locale('fr');
+
+        $mail->assertHasSubject('Nous avons bien reçu votre message – OGSA');
+        $mail->assertSeeInText('Bonjour Jean Dupont');
+        $mail->assertSeeInText('Demander un devis');
+        $mail->assertDontSeeInText('wireline');
+        $mail->assertDontSeeInHtml('wireline');
+    }
+
+    public function test_aucun_accuse_de_reception_si_le_champ_piege_est_rempli(): void
+    {
+        Mail::fake();
+
+        $this->post('/contact', $this->donneesValides(['site_web' => 'http://spam.example']));
+
+        Mail::assertNotSent(ContactConfirmation::class);
     }
 }

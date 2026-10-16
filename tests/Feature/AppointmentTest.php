@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Mail\AppointmentConfirmation;
 use App\Mail\AppointmentMessage;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Mail;
@@ -92,5 +93,36 @@ class AppointmentTest extends TestCase
     {
         $this->post('/rendez-vous', [])
             ->assertSessionHasErrors(['profil', 'nom', 'email', 'telephone', 'mode', 'domaine', 'date1', 'heure1', 'consentement']);
+    }
+
+    public function test_le_visiteur_recoit_un_accuse_de_reception_dans_sa_langue(): void
+    {
+        Mail::fake();
+
+        $this->post('/en/appointment', $this->donneesValides())->assertSessionHas('appointment_success');
+
+        Mail::assertSent(AppointmentConfirmation::class, fn (AppointmentConfirmation $mail) => $mail->hasTo('marie.ngoma@example.com')
+            && $mail->hasReplyTo('direction@ogs-africa.com')
+            && $mail->locale === 'en');
+    }
+
+    public function test_l_accuse_de_reception_recapitule_les_creneaux_sans_le_message(): void
+    {
+        $donnees = $this->donneesValides(['langue' => 'en']);
+        $mail = (new AppointmentConfirmation($donnees))->locale('en');
+
+        $mail->assertHasSubject('Your appointment request – OGSA');
+        $mail->assertSeeInText('Video call');
+        $mail->assertSeeInText(Carbon::parse($donnees['date1'])->locale('en')->translatedFormat('l, F j, Y').' at 09:00');
+        $mail->assertDontSeeInText('wireline');
+    }
+
+    public function test_aucun_accuse_de_reception_si_le_champ_piege_est_rempli(): void
+    {
+        Mail::fake();
+
+        $this->post('/rendez-vous', $this->donneesValides(['site_web' => 'http://spam.example']));
+
+        Mail::assertNothingSent();
     }
 }
