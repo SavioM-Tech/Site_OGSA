@@ -67,7 +67,7 @@ return [
         'ifp' => ['name' => 'IFP Training', 'logo' => 'img/IFPTraining.jpg'],
         'emexdis' => ['name' => 'Emexdis Engineering', 'logo' => 'img/emexdis.png'],
         'atis' => ['name' => 'ATIS Congo', 'logo' => 'img/atis-congo.png'],
-        'asa' => ['name' => 'Assistance Services Accompagnement (ASA)', 'logo' => 'img/asa-concept.jpg'],
+        'asa' => ['name' => 'ASA Concept Congo', 'logo' => 'img/asa-concept.jpg'],
     ],
 
     /*
@@ -83,7 +83,7 @@ return [
         'brega' => ['name' => 'Brega Petroleum Marketing Company', 'logo' => 'img/brega.png'],
         'petroleum' => ['name' => 'Petroleum Exploration & Production Africa (Petroleum E&P)', 'logo' => 'img/petroleum.jpg'],
         'formation' => ['logo' => null, 'icon' => 'fa-graduation-cap'],
-        'pme' => ['logo' => null, 'icon' => 'fa-building'],
+        'pme' => ['name' => 'TotalEnergies', 'logo' => 'img/totalEp.png'],
     ],
 
     /*

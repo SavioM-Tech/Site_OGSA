@@ -25,9 +25,9 @@ return [
     'mission_text' => 'Our mission is to provide oil operators with high-level expertise in engineering, maintenance and risk management, thereby helping to strengthen the competitiveness and resilience of the African oil industry.',
     'values' => [
         ['icon' => 'fa-users', 'title' => 'Safety', 'text' => 'Safety is at the heart of everything we do. We are committed to ensuring a safe and secure working environment for our teams, clients and partners.'],
-        ['icon' => 'fa-heart', 'title' => 'Integrity', 'text' => 'We firmly believe that integrity is the foundation of our business relationships. This means acting with transparency, honesty and ethics in all our interactions.'],
-        ['icon' => 'fa-laptop', 'title' => 'Excellence', 'text' => 'We are driven by the ambition to lead in our field. Our pursuit of excellence is reflected in the passion we bring to our work.'],
-        ['icon' => 'fa-briefcase', 'title' => 'Responsibility', 'text' => 'We carry out our business with skill and a strong sense of responsibility. We stand by our commitments to both our clients and our employees.'],
+        ['icon' => 'fa-heart', 'title' => 'Integrity', 'text' => 'Integrity in our business relationships: honesty and trust with our employees, clients and partners alike, in compliance with local regulations.'],
+        ['icon' => 'fa-laptop', 'title' => 'Performance', 'text' => 'Driven by the will to be the best: passion for our trade, pride in a job well done, the pursuit of excellence and the sharing of know-how.'],
+        ['icon' => 'fa-briefcase', 'title' => 'Responsibility', 'text' => 'Carrying out our business with skill and conscientiousness, keeping our word, and respecting the environment and the communities where we operate.'],
     ],
     'cta_title' => 'Would you like to benefit from our network?',
     'cta_text' => 'Find out how our expertise can turn your projects into successes, with solutions tailored to your specific needs.',

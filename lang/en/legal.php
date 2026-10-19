@@ -11,8 +11,8 @@ return [
         'title' => 'Legal notice',
         'description' => 'Legal notice for the website of Oil & Gas Services Africa (OGSA): publisher, hosting, intellectual property.',
         'sections' => [
-            ['Website publisher', '<p><strong>:name (:short)</strong><br>Legal form and share capital: [to be completed]<br>Trade register (RCCM): [to be completed] – Tax ID (NIU): [to be completed]<br>Head office: :address<br>Email: :email<br>Phone: :phones</p><p>Publication director: [name to be completed]</p>'],
-            ['Hosting', '<p>[Host name, address and phone number to be completed]</p>'],
+            ['Website publisher', '<p><strong>:name (:short)</strong><br>Legal form and share capital: [to be completed]<br>Trade register (RCCM): PNR/18 B426 – Tax ID (NIU): M2018110000963164<br>Head office: :address<br>Technical department: Zone industrielle de la Foire, ATIS Congo building, Pointe-Noire<br>Email: :email<br>Phone: :phones</p><p>Publication director: [name to be completed]</p>'],
+            ['Hosting', '<p>LWS (Ligne Web Services), 10 rue Penthièvre, 75008 Paris, France – www.lws.fr</p>'],
             ['Intellectual property', '<p>All content on this website (text, images, logos, layout) is the property of :name or its partners. Any full or partial reproduction without prior written permission is prohibited. Partner and client logos remain the property of their respective owners.</p>'],
             ['Liability', '<p>OGSA strives to provide accurate and up-to-date information but cannot be held liable for errors, omissions or website unavailability. The information provided is for guidance only and does not constitute a contractual offer.</p>'],
             ['Personal data', '<p>The processing of data submitted through the forms is described in our :privacy_link.</p>'],

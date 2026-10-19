@@ -11,8 +11,8 @@ return [
         'title' => 'Mentions légales',
         'description' => 'Mentions légales du site de la société Oil & Gas Services Africa (OGSA) : éditeur, hébergement, propriété intellectuelle.',
         'sections' => [
-            ['Éditeur du site', '<p><strong>:name (:short)</strong><br>Forme juridique et capital : [à compléter]<br>RCCM : [à compléter] – NIU : [à compléter]<br>Siège social : :address<br>E-mail : :email<br>Téléphone : :phones</p><p>Directeur de la publication : [nom à compléter]</p>'],
-            ['Hébergement', '<p>[Nom de l’hébergeur, adresse et téléphone à compléter]</p>'],
+            ['Éditeur du site', '<p><strong>:name (:short)</strong><br>Forme juridique et capital : [à compléter]<br>RCCM : PNR/18 B426 – NIU : M2018110000963164<br>Siège social : :address<br>Direction technique : Zone industrielle de la Foire, immeuble ATIS Congo, Pointe-Noire<br>E-mail : :email<br>Téléphone : :phones</p><p>Directeur de la publication : [nom à compléter]</p>'],
+            ['Hébergement', '<p>LWS (Ligne Web Services), 10 rue Penthièvre, 75008 Paris, France – www.lws.fr</p>'],
             ['Propriété intellectuelle', '<p>L’ensemble des contenus de ce site (textes, images, logos, mise en page) est la propriété de :name ou de ses partenaires. Toute reproduction, totale ou partielle, sans autorisation écrite préalable est interdite. Les logos des partenaires et références restent la propriété de leurs titulaires respectifs.</p>'],
             ['Responsabilité', '<p>OGSA s’efforce de fournir des informations exactes et à jour, mais ne saurait être tenue responsable des erreurs, omissions ou d’une indisponibilité du site. Les informations présentées sont fournies à titre indicatif et ne constituent pas une offre contractuelle.</p>'],
             ['Données personnelles', '<p>Le traitement des données transmises via les formulaires est décrit dans notre :privacy_link.</p>'],

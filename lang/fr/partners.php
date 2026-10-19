@@ -9,7 +9,7 @@ return [
     'partners_text' => 'Un réseau d’entreprises spécialisées qui nous permet de répondre à l’ensemble des besoins de nos clients.',
     'logo_alt' => 'Logo :name',
     'texts' => [
-        'asa' => "Activités d'architecture et d'ingénierie, contrôle et analyses techniques, HSE, management de projets, assistance technique – France.",
+        'asa' => 'Management de projet : études (tuyauterie, charpente, inspection, génie civil), supervision des travaux, pilotage de projets et arrêts d’unités. Sécurité, santé, environnement : supervision et coordination HSE, accompagnement MASE, évaluation des risques professionnels (EVRP), analyses de risques et modes opératoires, plans de prévention.',
         'delfico' => 'OGSA partenaire local de Delfico : tous types d’assistance aux rigs de forage, mise à disposition de personnel qualifié pour les projets upstream et downstream – France.',
         'eris' => 'Coaching individuel et collectif, conseil en management des organisations, conseil en systèmes d’information, aide à la conception de projets d’entreprise.',
         'ifp' => 'Mise à disposition de formateurs qualifiés pour réaliser des formations qualifiantes dans le domaine Oil & Gas en Afrique.',
@@ -29,7 +29,7 @@ return [
         'brega' => ['sector' => 'Ingénierie portuaire – Projet Tobrouk', 'text' => 'Études de base et de détail pour la réparation de la jetée de chargement des hydrocarbures et la construction d’une nouvelle jetée.'],
         'petroleum' => ['sector' => 'Production – Permis NGOKI', 'text' => 'Études d’ingénierie en vue de forages complémentaires, de tests de puits et d’une installation de production anticipée (Early Production Facility).'],
         'formation' => ['name' => 'Société de services pétroliers', 'sector' => 'Formation', 'text' => 'Formations techniques pour les agents cadres du ministère des Hydrocarbures de la République du Congo.'],
-        'pme' => ['name' => 'Sociétés privées nationales', 'sector' => 'Accompagnement des PME', 'text' => 'Accompagnement des filières chaudronnerie, tuyauterie, soudure, bâtiment et travaux publics : formations techniques et management, formations comptabilité (niveaux 2 et 3), analyses de risques technologiques (TRA).'],
+        'pme' => ['name' => 'TotalEnergies', 'sector' => 'Accompagnement des PME', 'text' => 'Accompagnement des sociétés privées nationales des filières chaudronnerie, tuyauterie, soudure, bâtiment et travaux publics : formations techniques et management, formations comptabilité (niveaux 2 et 3), formation ressources humaines, analyses de risques technologiques (TRA).'],
     ],
     'featured' => [
         'name' => 'TOTAL Energies EP',

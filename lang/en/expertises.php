@@ -31,6 +31,7 @@ return [
                 'items' => [
                     ['label' => 'Production methods', 'text' => 'Our engineers develop and optimise production processes, ensuring optimal resource management and minimal production downtime.'],
                     ['label' => 'Drilling methods', 'text' => 'Drawing on our drilling experience, we provide technical solutions to plan, execute and supervise safe and efficient drilling operations, taking into account the specific challenges of each project.'],
+                    ['label' => 'Design office', 'text' => 'OGSA provides an oil and gas design office for your production, drilling and facilities studies.'],
                 ],
             ],
             [
@@ -86,6 +87,7 @@ return [
                 'items' => [
                     ['label' => 'Maintenance plan development', 'text' => 'We design maintenance programmes tailored to each client’s specific needs, taking into account technical requirements and operating constraints. These programmes are based on an in-depth analysis of operational data and industry best practices.'],
                     ['label' => 'Reliability and criticality analysis', 'text' => 'Working with operations teams, our engineers assess equipment according to criticality and reliability in order to prioritise maintenance and inspection actions, thereby reducing the risk of major breakdowns.'],
+                    ['label' => 'Equipment repair', 'text' => 'Repair of completion, electrical, instrumentation and mechanical equipment.'],
                     ['label' => 'Regulatory inspection management', 'text' => 'OGSA supports its clients in managing periodic regulatory inspections and certifications, ensuring that all facilities comply with current safety standards.'],
                 ],
             ],
@@ -152,6 +154,7 @@ return [
                 'items' => [
                     ['label' => 'Solving technical and organisational issues', 'text' => 'Our experts work with your teams to analyse the difficulties encountered in the field or within the organisation, propose practical solutions and support their implementation.'],
                     ['label' => 'On-site team support', 'text' => 'We work alongside employees and operations managers to reinforce good practices, improve working methods and ensure skills transfer in a demanding professional environment.'],
+                    ['label' => 'Business support', 'text' => 'Support in business management, people management and individual and collective effectiveness; assistance to SMEs in managing their oil and gas operations.'],
                 ],
             ],
         ],
@@ -274,6 +277,9 @@ return [
                 'title' => null,
                 'intro' => 'Our representation service provides comprehensive support to oil and gas companies and to governments. We work at different levels to ensure project success, while ensuring compliance with industry standards and specific requirements.',
                 'items' => [
+                    ['label' => 'Representation of new oil operators', 'text' => 'We represent oil operators setting up locally and support them in their dealings.'],
+                    ['label' => 'Representation of foreign suppliers and oil service providers', 'text' => 'We represent foreign suppliers and oil service providers with local stakeholders.'],
+                    ['label' => 'Representation of certain organisations', 'text' => 'We also represent certain organisations in the sector.'],
                     ['label' => 'Tender support for SMEs', 'text' => 'We help small and medium-sized enterprises write their responses to tenders, particularly in the oil sector, to maximise their chances of success.'],
                     ['label' => 'Advice to governments and oil operators', 'text' => 'OGSA provides strategic advisory services to governments and companies, helping them define and implement effective and sustainable energy policies.'],
                     ['label' => 'Technical audits and reviews', 'text' => 'We carry out in-depth audits of entities and operating sites to assess process compliance and identify opportunities for improvement. Our technical reviews help ensure efficient operations and safe facilities.'],

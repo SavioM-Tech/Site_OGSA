@@ -32,6 +32,7 @@ return [
                 'items' => [
                     ['label' => 'Méthodes de production', 'text' => 'Nos ingénieurs développent et optimisent les processus de production, en veillant à une gestion optimale des ressources et à la minimisation des arrêts de production.'],
                     ['label' => 'Méthodes de forage', 'text' => 'Grâce à notre expérience dans le domaine du forage, nous fournissons des solutions techniques pour planifier, exécuter et superviser des opérations de forage sûres et efficaces, en tenant compte des défis spécifiques de chaque projet.'],
+                    ['label' => 'Bureau d’études', 'text' => 'OGSA met à votre disposition un bureau d’études dans le domaine pétrolier pour vos études de production, de forage et d’installations.'],
                 ],
             ],
             [
@@ -87,6 +88,7 @@ return [
                 'items' => [
                     ['label' => 'Développement de plans de maintenance', 'text' => 'Nous concevons des programmes de maintenance adaptés aux besoins spécifiques de chaque client, en tenant compte des exigences techniques et des contraintes d’exploitation. Ces programmes sont basés sur une analyse approfondie des données opérationnelles et des meilleures pratiques industrielles.'],
                     ['label' => 'Analyse de fiabilité et de criticité', 'text' => 'En collaboration avec les équipes d’exploitation, nos ingénieurs évaluent les équipements selon leur criticité et leur fiabilité pour prioriser les actions de maintenance et d’inspection, réduisant ainsi les risques de pannes majeures.'],
+                    ['label' => 'Réparation d’équipements', 'text' => 'Réparation d’équipements de complétion, d’électricité, d’instrumentation et de mécanique.'],
                     ['label' => 'Gestion des inspections réglementaires', 'text' => 'OGSA accompagne ses clients dans la gestion des inspections périodiques réglementaires et des certifications, garantissant que toutes les installations respectent les normes de sécurité en vigueur.'],
                 ],
             ],
@@ -153,6 +155,7 @@ return [
                 'items' => [
                     ['label' => 'Résolution de problématiques techniques et organisationnelles', 'text' => 'Nos experts analysent avec vos équipes les difficultés rencontrées sur le terrain ou dans l’organisation, proposent des solutions concrètes et accompagnent leur mise en œuvre.'],
                     ['label' => 'Accompagnement des équipes sur le terrain', 'text' => 'Nous intervenons aux côtés des collaborateurs et responsables opérationnels afin de renforcer les bonnes pratiques, améliorer les méthodes de travail et assurer le transfert de compétences dans un environnement professionnel exigeant.'],
+                    ['label' => 'Accompagnement des entreprises', 'text' => 'Accompagnement dans la gestion d’entreprise, le management des hommes et l’efficacité individuelle et collective ; support aux PME pour la gestion de leurs opérations dans le domaine pétrolier.'],
                 ],
             ],
         ],
@@ -266,7 +269,7 @@ return [
         'title' => 'Représentation',
         'seo_title' => 'Représentation, appels d’offres et audits techniques',
         'heading' => 'Représentation et support technique',
-        'summary' => 'Appels d’offres, conseil aux États et opérateurs, audits, restitution de sites.',
+        'summary' => 'Représentation d’opérateurs et de fournisseurs, appels d’offres, conseil, audits, restitution de sites.',
         'description' => "Représentation et support technique : accompagnement des PME aux appels d'offres pétroliers, conseil aux États et opérateurs, audits et revues techniques, restitution de sites.",
         'lead_title' => 'La représentation chez Oil & Gas Services Africa (OGSA)',
         'lead' => 'Nous offrons un soutien de premier plan à nos clients grâce à nos services de représentation. Nos interventions visent à renforcer les compétences, optimiser les performances et accompagner les entreprises dans leur développement stratégique dans le secteur pétrolier.',
@@ -275,6 +278,9 @@ return [
                 'title' => null,
                 'intro' => 'Notre service de représentation assure un soutien complet aux entreprises du secteur Oil & Gas et aux États. Nous intervenons à divers niveaux pour garantir le succès des projets, tout en veillant au respect des normes et des exigences spécifiques à l’industrie.',
                 'items' => [
+                    ['label' => 'Représentation de nouveaux opérateurs pétroliers', 'text' => 'Nous représentons localement les opérateurs pétroliers qui s’implantent et les accompagnons dans leurs démarches.'],
+                    ['label' => 'Représentation de fournisseurs étrangers et de prestataires de services pétroliers', 'text' => 'Nous représentons les fournisseurs étrangers et les prestataires de services pétroliers auprès des acteurs locaux.'],
+                    ['label' => 'Représentation de certains organismes', 'text' => 'Nous assurons également la représentation de certains organismes du secteur.'],
                     ['label' => 'Support aux PME pour les appels d’offres', 'text' => 'Nous assistons les petites et moyennes entreprises dans la rédaction des réponses aux appels d’offres, notamment dans le domaine pétrolier, afin de maximiser leurs chances de succès.'],
                     ['label' => 'Conseil aux États et opérateurs pétroliers', 'text' => 'OGSA offre des services de conseil stratégique aux États et aux entreprises, les aidant à définir et mettre en œuvre des politiques énergétiques efficaces et durables.'],
                     ['label' => 'Audits et revues techniques', 'text' => 'Nous réalisons des audits approfondis des entités et des sites opérationnels pour évaluer la conformité des processus et identifier les opportunités d’amélioration. Nos revues techniques permettent de garantir l’efficacité des opérations et la sécurité des installations.'],

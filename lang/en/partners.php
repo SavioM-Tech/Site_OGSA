@@ -9,7 +9,7 @@ return [
     'partners_text' => 'A network of specialised companies that enables us to meet all our clients’ needs.',
     'logo_alt' => ':name logo',
     'texts' => [
-        'asa' => 'Architecture and engineering, technical inspection and analysis, HSE, project management, technical assistance – France.',
+        'asa' => 'Project management: studies (piping, steel structures, inspection, civil engineering), works supervision, project management and unit shutdowns. Health, safety and environment: HSE supervision and coordination, MASE support, occupational risk assessment, risk analyses and operating procedures, prevention plans.',
         'delfico' => 'OGSA is Delfico’s local partner: all types of drilling rig support, supply of qualified personnel for upstream and downstream projects – France.',
         'eris' => 'Individual and team coaching, organisational management consulting, information systems consulting, support in designing business projects.',
         'ifp' => 'Provision of qualified trainers to deliver certified training courses in the oil and gas sector in Africa.',
@@ -28,7 +28,7 @@ return [
         'brega' => ['sector' => 'Marine engineering – Tobruk project', 'text' => 'Basic and detailed studies for the repair of the hydrocarbon loading jetty and the construction of a new jetty.'],
         'petroleum' => ['sector' => 'Production – NGOKI permit', 'text' => 'Engineering studies for additional wells, well tests and an Early Production Facility.'],
         'formation' => ['name' => 'Oil services company', 'sector' => 'Training', 'text' => 'Technical training for senior staff of the Ministry of Hydrocarbons of the Republic of the Congo.'],
-        'pme' => ['name' => 'National private companies', 'sector' => 'SME support', 'text' => 'Support for the boilermaking, piping, welding, building and public works sectors: technical and management training, accounting training (levels 2 and 3), technological risk assessments (TRA).'],
+        'pme' => ['name' => 'TotalEnergies', 'sector' => 'SME support', 'text' => 'Support for national private companies in boilermaking, piping, welding, building and public works: technical and management training, accounting training (levels 2 and 3), human resources training, technological risk assessments (TRA).'],
     ],
     'featured' => [
         'name' => 'TOTAL Energies EP',

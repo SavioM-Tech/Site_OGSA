@@ -25,9 +25,9 @@ return [
     'mission_text' => 'Notre mission est de mettre à la disposition des opérateurs pétroliers une expertise de haut niveau en ingénierie, maintenance et gestion des risques, contribuant ainsi à renforcer la compétitivité et la résilience de l’industrie pétrolière africaine.',
     'values' => [
         ['icon' => 'fa-users', 'title' => 'Sécurité', 'text' => 'La sécurité est au cœur de toutes nos interventions. Nous mettons un point d’honneur à garantir un environnement de travail sûr et sécurisé pour nos équipes, nos clients et nos partenaires.'],
-        ['icon' => 'fa-heart', 'title' => 'Intégrité', 'text' => 'Nous croyons fermement en l’intégrité comme fondement de nos relations commerciales. Cela signifie agir avec transparence, honnêteté et éthique dans toutes nos interactions.'],
-        ['icon' => 'fa-laptop', 'title' => 'Excellence', 'text' => 'Nous sommes animés par l’ambition d’être des leaders dans notre domaine. La recherche de l’excellence se reflète dans la passion avec laquelle nous exerçons notre métier.'],
-        ['icon' => 'fa-briefcase', 'title' => 'Responsabilité', 'text' => 'Nous exerçons notre activité avec compétence et un profond sens des responsabilités. Nous tenons fermement à nos engagements, tant envers nos clients qu’envers nos employés.'],
+        ['icon' => 'fa-heart', 'title' => 'Intégrité', 'text' => 'Intégrité dans nos relations commerciales : honnêteté et confiance, aussi bien avec nos employés qu’avec nos clients et partenaires, dans le respect de la réglementation locale.'],
+        ['icon' => 'fa-laptop', 'title' => 'Performance', 'text' => 'Animés de la volonté d’être les meilleurs : la passion du métier, le goût du travail bien fait, la recherche de l’excellence et le partage du savoir-faire.'],
+        ['icon' => 'fa-briefcase', 'title' => 'Responsabilité', 'text' => 'Exercer notre activité avec compétence et conscience, nous engager à honorer notre parole, respecter l’environnement et les communautés des zones d’opérations.'],
     ],
     'cta_title' => 'Souhaitez-vous profiter de notre réseau ?',
     'cta_text' => 'Découvrez comment notre expertise peut transformer vos projets en succès, avec des solutions adaptées à vos besoins spécifiques.',
