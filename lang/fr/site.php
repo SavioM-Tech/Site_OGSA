@@ -21,8 +21,8 @@ return [
         'partners' => 'Nos partenaires',
         'faq' => 'FAQ',
         'contact' => 'Contact',
-        'quote' => 'Demander un devis',
-        'quote_short' => 'Devis',
+        'quote' => 'Demander une offre',
+        'quote_short' => 'Offre',
         'home_title' => 'Accueil – :name',
         'logo_alt' => 'Logo OGSA – Oil & Gas Services Africa',
         'language' => 'Choisir la langue',
@@ -66,7 +66,7 @@ return [
     'cta' => [
         'title' => 'Un projet, une question ?',
         'text' => 'Décrivez-nous votre besoin : nos équipes l’étudient et reviennent vers vous avec une solution adaptée.',
-        'quote' => 'Demander un devis',
+        'quote' => 'Demander une offre',
     ],
 
     'quick_contact' => [
@@ -78,12 +78,12 @@ return [
     'expertise' => [
         'others' => "Nos autres domaines d'expertise",
         'image_alt' => ':title – OGSA',
-        'quote' => 'Demander un devis',
+        'quote' => 'Demander une offre',
     ],
 
     'contact' => [
-        'title' => 'Contact et demande de devis',
-        'description' => 'Contactez OGSA (Oil & Gas Services Africa), siège à Pointe-Noire : demande de devis, information sur nos services ou partenariat. E-mail : direction@ogs-africa.com, téléphone : (+242) 04 498 68 30.',
+        'title' => 'Contact et demande d’offre',
+        'description' => 'Contactez OGSA (Oil & Gas Services Africa), siège à Pointe-Noire : demande d’offre, information sur nos services ou partenariat. E-mail : direction@ogs-africa.com, téléphone : (+242) 04 498 68 30.',
         'heading' => 'Contactez-nous',
         'crumb' => 'Contact',
         'form_title' => 'Écrivez-nous',
@@ -135,7 +135,7 @@ return [
             'particulier' => 'Particulier / candidat',
         ],
         'objets' => [
-            'devis' => 'Demander un devis',
+            'devis' => 'Demander une offre',
             'information' => 'Avoir des informations sur nos services',
             'partenariat' => 'Établir un partenariat',
             'candidature' => 'Proposer une candidature',

@@ -89,7 +89,10 @@ return [
         ],
     ],
 
-    'references_title' => 'They trust us',
+    'references_title' => 'They have trusted us',
+    'references_text' => 'Clients and institutions that have entrusted OGSA with assignments.',
+    'partners_title' => 'Our partners',
+    'partners_text' => 'The companies we join forces with.',
 
     'standards_title' => 'Certifications, Standards and Compliance',
     'standards_text' => 'We rigorously follow international safety, quality and environmental standards to deliver reliable operations that fully comply with oil industry requirements.',

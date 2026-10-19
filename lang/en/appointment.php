@@ -59,7 +59,7 @@ return [
         '<b>understand your context</b>: facilities, site constraints, HSE requirements;',
         '<b>identify the skills</b> to mobilise from our areas of expertise and our network;',
         '<b>define the scope</b>, schedule and expected deliverables;',
-        '<b>answer your questions</b> before sending a proposal or quote.',
+        '<b>answer your questions</b> before sending a proposal.',
     ],
 
     'steps_title' => 'How it works',

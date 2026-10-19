@@ -191,16 +191,39 @@
             <div class="col-lg-12">
                 <div class="section-title">
                     <h2>{{ __('home.references_title') }}</h2>
+                    <p>{{ __('home.references_text') }}</p>
+                </div>
+            </div>
+        </div>
+        {{-- Deux groupes distincts : les clients qui ont fait appel à OGSA, puis ses partenaires. --}}
+        <div class="row">
+            <div class="col-lg-12 col-12">
+                <div class="owl-carousel testimonial-slider">
+                    @foreach (config('ogsa.references') as $reference)
+                        <div class="single-testimonial">
+                            <a href="{{ lroute('partners') }}#references" title="{{ reference_name($reference) }}">
+                                <img src="{{ asset($reference['logo']) }}" alt="{{ reference_name($reference) }}" loading="lazy">
+                            </a>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+        <div class="row testimonials-partners">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <h2>{{ __('home.partners_title') }}</h2>
+                    <p>{{ __('home.partners_text') }}</p>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-12 col-12">
                 <div class="owl-carousel testimonial-slider">
-                    @foreach (config('ogsa.references') as $reference)
+                    @foreach (config('ogsa.partners') as $partner)
                         <div class="single-testimonial">
-                            <a href="{{ lroute('partners') }}" title="{{ reference_name($reference) }}">
-                                <img src="{{ asset($reference['logo']) }}" alt="{{ reference_name($reference) }}" loading="lazy">
+                            <a href="{{ lroute('partners') }}" title="{{ $partner['name'] }}">
+                                <img src="{{ asset($partner['logo']) }}" alt="{{ $partner['name'] }}" loading="lazy">
                             </a>
                         </div>
                     @endforeach

@@ -21,8 +21,8 @@ return [
         'partners' => 'Our partners',
         'faq' => 'FAQ',
         'contact' => 'Contact',
-        'quote' => 'Request a quote',
-        'quote_short' => 'Quote',
+        'quote' => 'Request a proposal',
+        'quote_short' => 'Proposal',
         'home_title' => 'Home – :name',
         'logo_alt' => 'OGSA logo – Oil & Gas Services Africa',
         'language' => 'Choose language',
@@ -66,7 +66,7 @@ return [
     'cta' => [
         'title' => 'A project or a question?',
         'text' => 'Tell us about your needs: our teams will review them and come back to you with a suitable solution.',
-        'quote' => 'Request a quote',
+        'quote' => 'Request a proposal',
     ],
 
     'quick_contact' => [
@@ -78,12 +78,12 @@ return [
     'expertise' => [
         'others' => 'Our other areas of expertise',
         'image_alt' => ':title – OGSA',
-        'quote' => 'Request a quote',
+        'quote' => 'Request a proposal',
     ],
 
     'contact' => [
-        'title' => 'Contact and quote request',
-        'description' => 'Contact OGSA (Oil & Gas Services Africa), headquartered in Pointe-Noire, Congo: quote requests, information about our services or partnerships. Email: direction@ogs-africa.com, phone: (+242) 04 498 68 30.',
+        'title' => 'Contact and proposal request',
+        'description' => 'Contact OGSA (Oil & Gas Services Africa), headquartered in Pointe-Noire, Congo: proposal requests, information about our services or partnerships. Email: direction@ogs-africa.com, phone: (+242) 04 498 68 30.',
         'heading' => 'Contact us',
         'crumb' => 'Contact',
         'form_title' => 'Write to us',
@@ -135,7 +135,7 @@ return [
             'particulier' => 'Individual / job applicant',
         ],
         'objets' => [
-            'devis' => 'Request a quote',
+            'devis' => 'Request a proposal',
             'information' => 'Get information about our services',
             'partenariat' => 'Set up a partnership',
             'candidature' => 'Submit a job application',

@@ -802,3 +802,10 @@ main > .call-action:last-child { margin-bottom: 70px; }
    (le thème la fixait à 220 px, « Assistance technique & coaching » dépassait). */
 .header .nav li .dropdown { width: max-content; min-width: 240px; max-width: 360px; }
 .header .nav li .dropdown li a { padding-left: 18px; padding-right: 22px; }
+
+/* Accueil : bandeau « Ils nous ont fait confiance » puis « Nos partenaires », deux groupes séparés. */
+.testimonials .section-title p { color: rgba(255, 255, 255, .85); }
+.testimonials .testimonials-partners { margin-top: 70px; }
+@media (max-width: 767px) {
+    .testimonials .testimonials-partners { margin-top: 40px; }
+}

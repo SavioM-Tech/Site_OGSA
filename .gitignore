@@ -26,3 +26,6 @@ Thumbs.db
 # Exports de connexion FTP (FileZilla) : jamais sur GitHub
 ftp*.xml
 /deploy
+
+# Documents de travail transmis par le client (brochures…) : jamais publiés.
+/public/Documents

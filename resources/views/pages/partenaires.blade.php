@@ -71,7 +71,7 @@
     </div>
 </section>
 
-<section class="section references pt-0">
+<section class="section references pt-0" id="references">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">

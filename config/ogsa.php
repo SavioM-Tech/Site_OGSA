@@ -61,13 +61,13 @@ return [
     | Partenaires : clé => logo et nom (les descriptions sont dans lang/{fr,en}/partners.php).
     */
     'partners' => [
-        'asa' => ['name' => 'Assistance Services Accompagnement (ASA)', 'logo' => 'img/asa-concept.jpg'],
         'delfico' => ['name' => 'Delfico', 'logo' => 'img/partenaireLogo.jpg'],
-        'eris' => ['name' => 'Eris', 'logo' => 'img/erisArts.png'],
         'cofs' => ['name' => 'Congo Oil Field Services', 'logo' => 'img/congoOilfield.png'],
+        'eris' => ['name' => 'Eris', 'logo' => 'img/erisArts.png'],
+        'ifp' => ['name' => 'IFP Training', 'logo' => 'img/IFPTraining.jpg'],
         'emexdis' => ['name' => 'Emexdis Engineering', 'logo' => 'img/emexdis.png'],
-        'gass' => ['name' => 'Global Automation Solutions & Services', 'logo' => 'img/gass.png'],
         'atis' => ['name' => 'ATIS Congo', 'logo' => 'img/atis-congo.png'],
+        'asa' => ['name' => 'Assistance Services Accompagnement (ASA)', 'logo' => 'img/asa-concept.jpg'],
     ],
 
     /*
@@ -79,7 +79,7 @@ return [
         'tchad' => ['logo' => 'img/logotchad.jpg'],
         'coraf' => ['name' => 'Congolaise de Raffinage (CORAF)', 'logo' => 'img/coraf.jpg'],
         'rca' => ['logo' => 'img/logoCentrafricaine.jpg'],
-        'pilatus' => ['name' => 'PILATUS Energy Congo', 'logo' => null, 'icon' => 'fa-industry'],
+        'pilatus' => ['name' => 'Pilatus Energy Congo', 'logo' => 'img/pilatus.jpg'],
         'brega' => ['name' => 'Brega Petroleum Marketing Company', 'logo' => 'img/brega.png'],
         'petroleum' => ['name' => 'Petroleum Exploration & Production Africa (Petroleum E&P)', 'logo' => 'img/petroleum.jpg'],
         'formation' => ['logo' => null, 'icon' => 'fa-graduation-cap'],
@@ -87,25 +87,20 @@ return [
     ],
 
     /*
-    | Références (carrousel d'accueil, page Partenaires). « name_en » si le nom se traduit.
+    | Références : clients et institutions qui ont confié des missions à OGSA (« Ils nous ont fait confiance »,
+    | brochure OGSA). Les partenaires sont dans « partners » ci-dessus. « name_en » si le nom se traduit.
     */
     'references' => [
         ['name' => 'TotalEnergies EP', 'logo' => 'img/totalEp.png'],
         ['name' => 'Schneider Electric', 'logo' => 'img/schneider-electric.jpg'],
         ['name' => "Ministère de l'Énergie et du Pétrole du Tchad", 'name_en' => 'Ministry of Energy and Petroleum of Chad', 'logo' => 'img/logotchad.jpg'],
-        ['name' => 'Egis', 'logo' => 'img/egis-logo.jpg'],
-        ['name' => 'IFP Training', 'logo' => 'img/IFPTraining.jpg'],
+        ['name' => 'Congolaise de Raffinage (CORAF)', 'logo' => 'img/coraf.jpg'],
         ['name' => 'Ministère des Mines et de la Géologie (Centrafrique)', 'name_en' => 'Ministry of Mines and Geology (Central African Republic)', 'logo' => 'img/logoCentrafricaine.jpg'],
-        ['name' => 'CORAF', 'logo' => 'img/coraf.jpg'],
-        ['name' => 'Eris', 'logo' => 'img/erisArts.png'],
-        ['name' => 'Emexdis Engineering', 'logo' => 'img/emexdis.png'],
         ['name' => 'Brega Petroleum Marketing Company', 'logo' => 'img/brega.png'],
-        ['name' => 'Congo Oil Field Services', 'logo' => 'img/congoOilfield.png'],
-        ['name' => 'AS Building', 'logo' => 'img/asBuilding.jpg'],
+        ['name' => 'Pilatus Energy Congo', 'logo' => 'img/pilatus.jpg'],
         ['name' => 'Petroleum Exploration & Production Africa', 'logo' => 'img/petroleum.jpg'],
-        ['name' => 'Global Automation Solutions & Services', 'logo' => 'img/gass.png'],
-        ['name' => 'Assistance Services Accompagnement (ASA)', 'logo' => 'img/asa-concept.jpg'],
-        ['name' => 'Delfico', 'logo' => 'img/partenaireLogo.jpg'],
+        ['name' => 'Egis', 'logo' => 'img/egis-logo.jpg'],
+        ['name' => 'AS Building', 'logo' => 'img/asBuilding.jpg'],
     ],
 
     /*

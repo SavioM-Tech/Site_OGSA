@@ -62,11 +62,11 @@ class ContactFormTest extends TestCase
         $mail = (new ContactMessage($this->donneesValides(['langue' => 'en'])))->locale('fr');
 
         $mail->assertSeeInHtml('Jean Dupont');
-        $mail->assertSeeInHtml('Demander un devis');
+        $mail->assertSeeInHtml('Demander une offre');
         $mail->assertSeeInHtml('Opérateur pétrolier');
         $mail->assertSeeInText('Services sur puits');
         $mail->assertSeeInText('English');
-        $mail->assertHasSubject('[Site OGSA] Demander un devis – Jean Dupont');
+        $mail->assertHasSubject('[Site OGSA] Demander une offre – Jean Dupont');
     }
 
     public function test_les_champs_obligatoires_sont_controles(): void
@@ -110,7 +110,7 @@ class ContactFormTest extends TestCase
     public function test_l_objet_peut_etre_preselectionne_par_lien(): void
     {
         $this->get('/contact?objet=devis')->assertOk()->assertSee('<option value="devis" selected', false);
-        $this->get('/en/contact?objet=devis')->assertOk()->assertSee('Request a quote');
+        $this->get('/en/contact?objet=devis')->assertOk()->assertSee('Request a proposal');
     }
 
     public function test_l_inscription_newsletter_est_transmise_a_la_direction(): void
@@ -142,7 +142,7 @@ class ContactFormTest extends TestCase
 
         $mail->assertHasSubject('Nous avons bien reçu votre message – OGSA');
         $mail->assertSeeInText('Bonjour Jean Dupont');
-        $mail->assertSeeInText('Demander un devis');
+        $mail->assertSeeInText('Demander une offre');
         $mail->assertDontSeeInText('wireline');
         $mail->assertDontSeeInHtml('wireline');
     }

@@ -3,7 +3,7 @@
 // Page « Partenaires » (français).
 return [
     'title' => 'Nos partenaires et références',
-    'description' => "Les partenaires techniques d'OGSA (Delfico, Eris, Congo Oil Field Services, Emexdis, GASS, ASA) et les entreprises et institutions qui lui font confiance : TotalEnergies EP, Schneider Electric, IFP Training, Egis…",
+    'description' => "Les partenaires techniques d'OGSA (Delfico, Congo Oil Field Services, Eris, IFP Training, Emexdis, ATIS Congo, ASA) et les entreprises et institutions qui lui ont fait confiance : TotalEnergies EP, Schneider Electric, CORAF, Brega…",
     'heading' => 'Nos partenaires',
     'partners_title' => 'Nos partenaires techniques',
     'partners_text' => 'Un réseau d’entreprises spécialisées qui nous permet de répondre à l’ensemble des besoins de nos clients.',
@@ -12,9 +12,9 @@ return [
         'asa' => "Activités d'architecture et d'ingénierie, contrôle et analyses techniques, HSE, management de projets, assistance technique – France.",
         'delfico' => 'OGSA partenaire local de Delfico : tous types d’assistance aux rigs de forage, mise à disposition de personnel qualifié pour les projets upstream et downstream – France.',
         'eris' => 'Coaching individuel et collectif, conseil en management des organisations, conseil en systèmes d’information, aide à la conception de projets d’entreprise.',
+        'ifp' => 'Mise à disposition de formateurs qualifiés pour réaliser des formations qualifiantes dans le domaine Oil & Gas en Afrique.',
         'cofs' => 'Activités de work-over, descente et remontée de pompes immergées, coil tubing.',
         'emexdis' => 'Ingénierie pétrolière : tuyauterie, structure, génie civil, électricité, instrumentation, automatismes, topographie.',
-        'gass' => 'Ingénierie automatismes et instrumentation, construction et installation, formation, maintenance, management de projet.',
         'atis' => 'Inspection et contrôle, de l’ingénierie jusqu’aux contrôles non destructifs (CND), inspection et formation levage, travaux sur cordes et formation (IRATA, CQP), accompagnement et formation aux systèmes qualité – Congo.',
     ],
     'case_studies_title' => 'Nos références',
@@ -36,8 +36,8 @@ return [
         'image_alt' => 'Intervention OGSA sur une plateforme offshore',
         'text' => 'Chez <b>Oil & Gas Services Africa (OGSA)</b>, notre expertise en <b>maintenance</b> est dédiée à garantir la performance, la sécurité et la durabilité des installations de nos clients dans le secteur pétrolier et gazier. Nous proposons un ensemble de services spécialisés pour optimiser les opérations de maintenance et d’inspection, tout en assurant une gestion proactive des risques techniques.',
     ],
-    'references_title' => 'Ils nous font confiance',
-    'references_text' => 'Opérateurs, industriels et institutions avec lesquels OGSA a collaboré.',
+    'references_title' => 'Ils nous ont fait confiance',
+    'references_text' => 'Opérateurs, industriels et institutions qui ont confié des missions à OGSA.',
     'cta_title' => 'Devenir partenaire d’OGSA ?',
     'cta_text' => 'Vous êtes une entreprise du secteur pétrolier et gazier et souhaitez collaborer avec nous ? Présentez-nous votre activité.',
 ];

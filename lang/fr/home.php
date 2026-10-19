@@ -91,7 +91,10 @@ return [
         ],
     ],
 
-    'references_title' => 'Ils témoignent et nous font confiance',
+    'references_title' => 'Ils nous ont fait confiance',
+    'references_text' => 'Clients et institutions qui ont confié des missions à OGSA.',
+    'partners_title' => 'Nos partenaires',
+    'partners_text' => 'Les entreprises avec lesquelles nous unissons nos compétences.',
 
     'standards_title' => 'Certifications, Normes et Conformités',
     'standards_text' => 'Nous respectons rigoureusement les standards internationaux en matière de sécurité, de qualité et d’environnement pour garantir des opérations fiables et totalement conformes aux exigences du secteur pétrolier.',

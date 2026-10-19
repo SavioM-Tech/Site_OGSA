@@ -59,7 +59,7 @@ return [
         '<b>comprendre votre contexte</b> : installations, contraintes de site, exigences H3SE ;',
         '<b>identifier les compétences</b> à mobiliser parmi nos domaines d’expertise et notre réseau ;',
         '<b>préciser le périmètre</b>, le calendrier et les livrables attendus ;',
-        '<b>répondre à vos questions</b> avant l’envoi d’une proposition ou d’un devis.',
+        '<b>répondre à vos questions</b> avant l’envoi d’une offre.',
     ],
 
     'steps_title' => 'Comment ça se passe',

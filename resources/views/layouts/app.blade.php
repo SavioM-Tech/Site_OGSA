@@ -67,7 +67,7 @@
     <link rel="stylesheet" href="{{ asset('style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
     <link rel="stylesheet" href="{{ asset('css/color/color12.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/ogsa.css') }}?v=35">
+    <link rel="stylesheet" href="{{ asset('css/ogsa.css') }}?v=36">
 
     @include('partials.schema-organization')
     @stack('jsonld')
@@ -100,7 +100,7 @@
     <script src="{{ asset('js/wow.min.js') }}"></script>
     <script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('js/main.js') }}"></script>
+    <script src="{{ asset('js/main.js') }}?v=2"></script>
     <script>
         // Sélecteur de langue : ferme le menu en cliquant ailleurs ou avec Échap.
         (function () {

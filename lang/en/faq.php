@@ -3,14 +3,14 @@
 // FAQ (English). Variables: :expertises, :email, :phones, :hours, :address.
 return [
     'title' => 'Frequently asked questions',
-    'description' => 'Answers to frequently asked questions about OGSA: areas of work, locations, quote requests, HSE standards, supply of personnel, training and partnerships.',
+    'description' => 'Answers to frequently asked questions about OGSA: areas of work, locations, proposal requests, HSE standards, supply of personnel, training and partnerships.',
     'crumb' => 'FAQ',
     'more' => 'Can’t find the answer to your question? :link.',
     'more_link' => 'Contact us',
     'items' => [
         ['q' => 'What areas does OGSA work in?', 'a' => 'OGSA supports oil and gas operators in the following areas: :expertises. Our core business is HSE (Health, Safety and Environment) and operations expertise.'],
         ['q' => 'Where is OGSA located and where does it operate?', 'a' => 'Our head office is located at :address. OGSA operates across Africa, on both onshore and offshore sites, for operators, industrial companies and institutions.'],
-        ['q' => 'How can I get a quote?', 'a' => 'Fill in the form on the Contact page, selecting “Request a quote” and specifying the area concerned, location and timeframe of your project. You can also email us at :email or call us on :phones.'],
+        ['q' => 'How can I get a proposal?', 'a' => 'Fill in the form on the Contact page, selecting “Request a proposal” and specifying the area concerned, location and timeframe of your project. You can also email us at :email or call us on :phones.'],
         ['q' => 'Which standards and regulations do you follow?', 'a' => 'Our interventions apply international HSE best practices, align with ISO 9001, ISO 45001 and ISO 14001 standards, and comply with national oil regulations governing onshore and offshore operations.'],
         ['q' => 'Can you supply qualified personnel?', 'a' => 'Yes. OGSA selects experienced oil industry professionals and assigns them to temporary assignments or permanent positions, with the responsiveness needed to limit business disruption.'],
         ['q' => 'Do you offer training?', 'a' => 'Yes. We offer technical training in oil trades (production, drilling, inspection, maintenance) and support functions (human resources, finance, audit), as well as personalised technical coaching for engineers.'],
