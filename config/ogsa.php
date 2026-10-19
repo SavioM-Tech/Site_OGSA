@@ -38,11 +38,11 @@ return [
 
     // Siège social.
     'address' => [
-        'street' => '18, rue de Mvagui',
+        'street' => '14, rue de Mvagui',
         'city' => 'Pointe-Noire',
         'country_code' => 'CG',
         'po_box' => 'B.P. 4121',
-        'maps_url' => 'https://www.google.com/maps/search/?api=1&query=18+Rue+de+Mvagui+Pointe-Noire+Congo',
+        'maps_url' => 'https://www.google.com/maps/search/?api=1&query=14+Rue+de+Mvagui+Pointe-Noire+Congo',
     ],
 
     /*

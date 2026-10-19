@@ -66,7 +66,7 @@ class PagesTest extends TestCase
     public function test_le_siege_social_est_affiche(): void
     {
         $this->get('/contact')
-            ->assertSee('18, rue de Mvagui')
+            ->assertSee('14, rue de Mvagui')
             ->assertSee('Pointe-Noire')
             ->assertSee('B.P. 4121')
             ->assertSee('© '.date('Y').' Oil &amp; Gas Services Africa. Tous droits réservés.', false);

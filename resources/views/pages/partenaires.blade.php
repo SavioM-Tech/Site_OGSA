@@ -85,7 +85,7 @@
         <div class="service-details-area featured-reference">
             <div class="row align-items-center mb-5">
                 <div class="col-lg-5">
-                    <img src="{{ asset('img/maintenance-03.jpg') }}" alt="{{ __('partners.featured.image_alt') }}" class="img-fluid" loading="lazy">
+                    <img src="{{ asset('img/plateforme-offshore.jpg') }}" alt="{{ __('partners.featured.image_alt') }}" class="img-fluid" loading="lazy">
                 </div>
                 <div class="col-lg-7">
                     <div class="service-details-inner">
